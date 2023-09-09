@@ -3,7 +3,13 @@
   <head lang="de">
     <meta charset="UTF-8" />
     <script src="app.js"></script>
+    <script src="main.js"></script>
+    <script src="funktionen.js"></script>
+    <script src="funktionen_fuer_tabellen.js"></script>
+    <script src="daten.js"></script>
+    <script src="package.json.js"></script>
     <link rel="stylesheet" href="mm.css">
+    <link rel="stylesheet" href="tabelle.css">
   <head>
   </footer>
     <title>Messwertstatistik</title>
@@ -29,14 +35,6 @@
     <script>
       document.getElementById('statuszeile').innerHTML = raus_aus_der_hoehle();
       document.getElementById('halloDiv').innerHTML = aufwachen();
-
-
-      const myAsyncFunction = async () => {
-      const { myImportedClass } = await import('main.js');
-        myImportedClass.raus_aus_der_hoehle();
-      };
-      myAsyncFunction();
-
     </script>
   </body>
 </html>

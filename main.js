@@ -1,11 +1,11 @@
-import { version, name } from './package.json';
+/*import { version, name } from './package.json';
 import { json2Table } from './js/messungen/messwerttabelle.js';
 import { beispieldaten, messwerte_as_json_obj } from './js/messungen/messwerte.js';
 //Object.onload = function(){main.js};
-
-export function raus_aus_der_hoehle() {
-  let version = '0.1.2';
-  let name = 'Duomilia ';
+*/
+function raus_aus_der_hoehle() {
+  let version = '0.1.3';
+  let name = 'Baerchenhoehle';
 
   addKopfzeile();
   addHier(
@@ -18,22 +18,12 @@ export function raus_aus_der_hoehle() {
     gibMirEinUnformatiertesElement('p', 'Version: ' + version)
   );
   json2Table(messwerte_as_json_obj, 'messwerttabellenausgabe');
+
+  document.getElementById('statuszeile').innerHTML = 'hallo';
+  document.getElementById('navdemo').innerHTML = getSmallAppzeile();
+  document.getElementById('appzeile').innerHTML = getAppzeile();
+  return "Brumm"
 }
-
-document.getElementById('statuszeile').innerHTML = 'hallo';
-
-document.getElementById('navdemo').innerHTML = getSmallAppzeile();
-document.getElementById('appzeile').innerHTML = getAppzeile();
-
-addKopfzeile();
-addHier('app_author', gibMirEinUnformatiertesElement('p', 'Author: Duomilia'));
-addHier('app_name', gibMirEinUnformatiertesElement('p', 'Appname: ' + name));
-addHier(
-  'app_version',
-  gibMirEinUnformatiertesElement('p', 'Version: ' + version)
-);
-
-json2Table(messwerte_as_json_obj, 'messwerttabellenausgabe');
 
 function addHier(wo, was) {
   let test = document.getElementById(wo);
@@ -122,3 +112,5 @@ function getSmallAppzeile() {
   </div>
 </div>`;
 }
+
+console.log ("main.js geladen");
