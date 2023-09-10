@@ -1,24 +1,26 @@
 function aufwachen() {
-  raus_aus_der_hoehle();
+  console.log('Bin beim testing ......');
+  let testergebnis = do_testing();
+  console.log(testergebnis);
   return 'Bin aufgewacht um ' + new Date().toLocaleTimeString() + ' Uhr';
 }
 
 function testing() {
-  console.log('Bin beim testing...');
-  let testergebnis = do_testing(aufwachen());
+  console.log('Bin beim testing ......');
+  let testergebnis = do_testing();
   console.log(testergebnis);
-  return testergebnis ;
+  return testergebnis;
 }
 
-function do_testing(functionUnderTest) {
+function do_testing() {
   try {
-    eval(functionUnderTest);
+    eval(raus_aus_der_hoehle());
   } catch (e) {
     if (e instanceof SyntaxError) {
-      return 'SyntaxError (' + e.message + ') ' + e.stack;
+      return 'ERR: (' + e.name + ' ' + e.message+ ') ' + e.stack;
     }
     return 'Error (' + e.message + ') ' + e.stack;
   }
-  return "Testing... OK at ("+new Date().toLocaleTimeString() + ' Uhr'+")";
+  return 'Testing... OK at (' + new Date().toLocaleTimeString() + ' Uhr' + ')';
 }
 console.log('app.js geladen');

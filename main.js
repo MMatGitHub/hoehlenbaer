@@ -14,8 +14,8 @@ function raus_aus_der_hoehle() {
   );
   json2Table(messwerte_as_json_obj, 'messwerttabellenausgabe');
 
-  document.getElementById('navdemo').innerHTML = getSmallAppzeile();
   document.getElementById('appzeile').innerHTML = getAppzeile();
+  document.getElementById('navdemo').innerHTML = getSmallAppzeile();
   document.getElementById('statuszeile').innerHTML = addAblaufumgebungInfo();
   document.getElementById('halloDiv').innerText = "Brummte um "+new Date().toLocaleTimeString() + ' Uhr';
   return 'Brumm, Brummel, Gähn, ...';
