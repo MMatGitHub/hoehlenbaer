@@ -46,8 +46,5 @@ export const ecmaScriptInfo = (function () {
     // `Edition: ${edition} | Year: ${year}` is not allowed
   };
 })();
-
-console.log('ecmaScriptInfo');
-console.log(ecmaScriptInfo.edition);
-console.log(ecmaScriptInfo.year);
-console.log(ecmaScriptInfo.text);
+import {protokolliere} from './protokoll.js';
+protokolliere('runtime.js geladen');

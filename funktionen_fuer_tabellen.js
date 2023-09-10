@@ -29,4 +29,5 @@ export function json2Table(json_daten, inWelcheTabelle){
   document.getElementById('tabellendaten').appendChild(table);
 }
 
-console.log ("funktionen_fuer_tabellen.js geladen");
+import {protokolliere} from './protokoll.js';
+protokolliere('funktionen_fuer_tabellen.js geladen');

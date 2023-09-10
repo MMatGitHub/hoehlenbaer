@@ -1,4 +1,3 @@
-'use strict';
 import {raus_aus_der_hoehle} from './main.js';
 
 export function aufwachen() {
@@ -7,14 +6,15 @@ export function aufwachen() {
 }
 
 export function testing() {
-   document.getElementById('statuszeile').innerText="Bin beim Testing...";
-   let testergebnis = do_testing(raus_aus_der_hoehle());
-   document.getElementById('statuszeile').innerText=testergebnis ;
-   document.getElementById('halloDiv').innerText = 'Testende: ' + new Date().toLocaleTimeString() + ' Uhr';
-  }
+  console.log('Bin beim testing...');
+  let testergebnis = do_testing(raus_aus_der_hoehle());
+  console.log(testergebnis);
+  return testergebnis ;
+}
+
 function do_testing(functionUnderTest) {
   try {
-       eval(functionUnderTest);
+    eval(functionUnderTest);
   } catch (e) {
     if (e instanceof SyntaxError) {
       return 'SyntaxError (' + e.message + ') ' + e.stack;
@@ -23,4 +23,6 @@ function do_testing(functionUnderTest) {
   }
   return "Testing... OK";
 }
-console.log('main.js geladen');
+
+import {protokolliere} from './protokoll.js';
+protokolliere('app.js geladen');

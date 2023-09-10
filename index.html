@@ -27,9 +27,9 @@
       <div id="halloDiv">hallo</div>
     </footer>  
  
-    <script type="module">
-      import {aufwachen, testing} from './app.js';
-      testing();
+    <script type="module" source="app.js">
+        import {aufwachen, testing} from './app.js';
+        document.getElementById('halloDiv').innerText = testing();
     </script>    
    </body>
 </html>

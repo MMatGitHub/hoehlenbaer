@@ -23,4 +23,5 @@ export const beispieldaten = [
     company: 'Hü & Hott & Co',
   },
 ];
-console.log ("daten.js geladen");
+import {protokolliere} from './protokoll.js';
+protokolliere('daten.js geladen');

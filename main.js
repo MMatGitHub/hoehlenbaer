@@ -4,7 +4,6 @@ import {messwerte_as_json_obj, beispieldaten} from './daten.js';
 import {ecmaScriptInfo} from './runtime.js';
 
 export function raus_aus_der_hoehle() {
-
   addKopfzeile();
   addHier(
     'app_author',
@@ -103,7 +102,7 @@ function getSmallAppzeile() {
     <a href="../quartette/quartette.html" class="w3-bar-item w3-button w3-padding-large">Quartette</a>
     <a href="../todo/todo.html" class="w3-bar-item w3-button w3-padding-large">todo</a>
     <a href="../mie/mie.html" class="w3-bar-item w3-button w3-padding-large">mie</a>
-    <a href="../mm/mm.html" class="w3-bar-item w3-button w3-padding-large">mm</a>
+    <a href="../mm/mm.html" clashallos="w3-bar-item w3-button w3-padding-large">mm</a>
   </div>
 </div>`;
 }
@@ -121,4 +120,6 @@ function addAblaufumgebungInfo(nachricht) {
     ')';
   return retVal;
 }
-console.log('main.js geladen');
+
+import {protokolliere} from './protokoll.js';
+protokolliere('main.js geladen');
