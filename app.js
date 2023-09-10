@@ -19,6 +19,6 @@ function do_testing(functionUnderTest) {
     }
     return 'Error (' + e.message + ') ' + e.stack;
   }
-  return "Testing... OK";
+  return "Testing... OK at ("+new Date().toLocaleTimeString() + ' Uhr'+")";
 }
 console.log('app.js geladen');

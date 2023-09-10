@@ -1,3 +1,4 @@
 # hoehlenbaer
 
-Single Page Webapp Vanilla Javascript no es6 modules oder doch?
+Single Page Webapp Vanilla Javascript?
+Single HTML-Page Vanilla Javascript, of CORS ;-)

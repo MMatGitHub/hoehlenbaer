@@ -1,5 +1,4 @@
 function raus_aus_der_hoehle() {
-  let metadaten = messwerte_as_json_obj;
   addKopfzeile();
   addHier(
     'app_author',
@@ -18,7 +17,7 @@ function raus_aus_der_hoehle() {
   document.getElementById('navdemo').innerHTML = getSmallAppzeile();
   document.getElementById('appzeile').innerHTML = getAppzeile();
   document.getElementById('statuszeile').innerHTML = addAblaufumgebungInfo();
-
+  document.getElementById('halloDiv').innerText = "Brummte um "+new Date().toLocaleTimeString() + ' Uhr';
   return 'Brumm, Brummel, Gähn, ...';
 }
 
