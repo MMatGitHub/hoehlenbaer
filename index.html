@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <script src="app.js"></script>
     <script src="main.js"></script>
+    <script src="ablaufumgebung.js"></script>
     <script src="funktionen.js"></script>
     <script src="funktionen_fuer_tabellen.js"></script>
     <script src="daten.js"></script>
     <script src="package.json.js"></script>
-    <link rel="stylesheet" href="mm.css">
-    <link rel="stylesheet" href="tabelle.css">
+    <link rel="stylesheet" href="mm_style.css">
+    <link rel="stylesheet" href="mm_style_w3c.css">
+    <link rel="stylesheet" href="mm_style_fuer_tabelle.css">
   <head>
+  
   </footer>
     <title>Messwertstatistik</title>
   </head>
@@ -28,13 +31,12 @@
     <div id="app_name"></div>
     <div id="app_version"></div>
     <div id="app_author"></div>
+    <div id="halloDiv">hi</div>
     <div id="statuszeile"></div>
-    <div id="halloDiv">Brumm</div>
     </footer>  
     
     <script>
-      document.getElementById('statuszeile').innerHTML = raus_aus_der_hoehle();
-      document.getElementById('halloDiv').innerHTML = aufwachen();
+      raus_aus_der_hoehle();
     </script>
   </body>
 </html>

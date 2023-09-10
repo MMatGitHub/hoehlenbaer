@@ -1,6 +1,9 @@
-const metadaten = [{
-  "name": "mm-static",
-  "version": "0.1.3",
-  "private": false,
-  "dependencies": {}
-}]
+const metadaten = [
+  {
+    name: 'Hoehlenbaerparadies',
+    version: '0.1.4',
+    author: 'Duomilia',
+    private: false,
+    dependencies: {},
+  },
+];

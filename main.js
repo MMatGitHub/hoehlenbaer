@@ -1,8 +1,7 @@
-/*import { version, name } from './package.json';
-import { json2Table } from './js/messungen/messwerttabelle.js';
-import { beispieldaten, messwerte_as_json_obj } from './js/messungen/messwerte.js';
+//import { json2Table } from './js/messungen/messwerttabelle.js';
+//import { beispieldaten, messwerte_as_json_obj } from './js/messungen/messwerte.js';
 //Object.onload = function(){main.js};
-*/
+
 function raus_aus_der_hoehle() {
   let version = '0.1.3';
   let name = 'Baerchenhoehle';
@@ -12,17 +11,19 @@ function raus_aus_der_hoehle() {
     'app_author',
     gibMirEinUnformatiertesElement('p', 'Author: Duomilia')
   );
-  addHier('app_name', gibMirEinUnformatiertesElement('p', 'Appname: ' + name));
+  addHier('app_name', gibMirEinUnformatiertesElement('p', '*Appname:* ' + name));
   addHier(
     'app_version',
     gibMirEinUnformatiertesElement('p', 'Version: ' + version)
   );
   json2Table(messwerte_as_json_obj, 'messwerttabellenausgabe');
 
-  document.getElementById('statuszeile').innerHTML = 'hallo';
+  document.getElementById('halloDiv').innerHTML = aufwachen();
   document.getElementById('navdemo').innerHTML = getSmallAppzeile();
   document.getElementById('appzeile').innerHTML = getAppzeile();
-  return "Brumm"
+  document.getElementById('statuszeile').innerHTML = addAblaufumgebungInfo();
+
+  return 'Brumm, Brummel, Gähn, ...';
 }
 
 function addHier(wo, was) {
@@ -36,14 +37,7 @@ function addKopfzeile() {
     gibMirEinElementMitTextFormatiert(
       'h1',
       'Herzlich willkommen im ',
-      'w3-xlarge'
-    )
-  );
-  test.appendChild(
-    gibMirEinElementMitTextFormatiert(
-      'h1',
-      'Herzlich willkommen im ',
-      'w3-margin'
+      'mm-margin-64'
     )
   );
   test.appendChild(
@@ -113,4 +107,13 @@ function getSmallAppzeile() {
 </div>`;
 }
 
-console.log ("main.js geladen");
+function addStatuszeile(nachricht) {
+  let einfuegen = document.getElementById('statuszeile');
+  einfuegen.appendChild(gibMirEinElementMitTextFormatiert('p', nachricht, ''));
+}
+function addAblaufumgebungInfo(nachricht) {
+  let retVal = 'ECMA Script: Edition ' + ecmaScriptInfo.edition + ' (' +  ecmaScriptInfo. year +
+  ')';
+  return retVal;
+}
+console.log('main.js geladen');

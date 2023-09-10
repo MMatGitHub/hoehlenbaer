@@ -25,7 +25,7 @@ function json2Table(json_daten, inWelcheTabelle){
       tabCell.innerHTML = json_daten[i][spalten[j]];
     }
   }
-  table.setAttribute("class",'dieMesswerteTabelle');
+  table.setAttribute("class",'mm-tabelle');
   document.getElementById('tabellendaten').appendChild(table);
 }
 

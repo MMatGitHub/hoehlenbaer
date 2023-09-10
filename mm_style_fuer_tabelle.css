@@ -3,7 +3,7 @@ table {
   border: 3px solid black;
 }
 
-.dieMesswerteTabelle {
+.mm-tabelle {
   margin: 10px;
   padding: 10px;
   min-width: 50%;
@@ -11,12 +11,12 @@ table {
   box-shadow: 10px 10px 5px #888888;
 }
 
-.dieMesswerteTabelle th {
+.mm-tabelle th {
   border: 2px solid black;
   background-color: gray;
 }
 
-.dieMesswerteTabelle td {
+.mm-tabelle td {
   border: 1px solid black;
   text-align: left;
   background-color: whitesmoke;
