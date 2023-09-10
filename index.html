@@ -2,9 +2,10 @@
 <html>
   <head lang="de">
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
     <script src="app.js"></script>
     <script src="main.js"></script>
-    <script src="ablaufumgebung.js"></script>
+    <script src="runtime.js"></script>
     <script src="funktionen.js"></script>
     <script src="funktionen_fuer_tabellen.js"></script>
     <script src="daten.js"></script>
@@ -15,9 +16,9 @@
   <head>
   
   </footer>
-    <title>Messwertstatistik</title>
+    <title>Höhlenbärenparadies</title>
   </head>
-  <body>
+  <body onload="TestBaer()">
     <div id="app"></div>
         <div id="appzeile"></div>
         <div id="navdemo"></div>
@@ -25,18 +26,29 @@
             <div id="kopfzeile"></div> 
           </header>
         <div id="spielfeld">
+
         <div id="tabellendaten"></div>
     </div>
     <footer class="w3-container w3-padding-64 w3-center w3-opacity">
     <div id="app_name"></div>
     <div id="app_version"></div>
     <div id="app_author"></div>
-    <div id="halloDiv">hi</div>
     <div id="statuszeile"></div>
+    <div id="halloDiv">hallo</div>
     </footer>  
-    
     <script>
-      raus_aus_der_hoehle();
+        function HalloBaer(){
+          document.getElementById('halloDiv').innerHTML = aufwachen();
+        }
+        function TestBaer(){
+      //    document.getElementById('halloDiv').innerHTML = testing();
+        }
     </script>
-  </body>
+    <script type="module">
+      import {module_testing} from './app.js';
+      import {raus_aus_der_hoehle} from './main.js';
+      document.getElementById('halloDiv').innerHTML = module_testing();
+      document.getElementById('halloDiv').innerHTML = raus_aus_der_hoehle();
+    </script>    
+   </body>
 </html>

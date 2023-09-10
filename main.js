@@ -1,24 +1,19 @@
-//import { json2Table } from './js/messungen/messwerttabelle.js';
-//import { beispieldaten, messwerte_as_json_obj } from './js/messungen/messwerte.js';
-//Object.onload = function(){main.js};
-
-function raus_aus_der_hoehle() {
-  let version = '0.1.3';
-  let name = 'Baerchenhoehle';
-
+export function raus_aus_der_hoehle() {
   addKopfzeile();
   addHier(
     'app_author',
     gibMirEinUnformatiertesElement('p', 'Author: Duomilia')
   );
-  addHier('app_name', gibMirEinUnformatiertesElement('p', '*Appname:* ' + name));
+  addHier(
+    'app_name',
+    gibMirEinUnformatiertesElement('p', '*Appname:* ' + metadaten[0]["name"])
+  );
   addHier(
     'app_version',
-    gibMirEinUnformatiertesElement('p', 'Version: ' + version)
+    gibMirEinUnformatiertesElement('p', 'Version: ' + metadaten[0]["version"])
   );
   json2Table(messwerte_as_json_obj, 'messwerttabellenausgabe');
 
-  document.getElementById('halloDiv').innerHTML = aufwachen();
   document.getElementById('navdemo').innerHTML = getSmallAppzeile();
   document.getElementById('appzeile').innerHTML = getAppzeile();
   document.getElementById('statuszeile').innerHTML = addAblaufumgebungInfo();
@@ -112,8 +107,12 @@ function addStatuszeile(nachricht) {
   einfuegen.appendChild(gibMirEinElementMitTextFormatiert('p', nachricht, ''));
 }
 function addAblaufumgebungInfo(nachricht) {
-  let retVal = 'ECMA Script: Edition ' + ecmaScriptInfo.edition + ' (' +  ecmaScriptInfo. year +
-  ')';
+  let retVal =
+    'ECMA Script: Edition ' +
+    ecmaScriptInfo.edition +
+    ' (' +
+    ecmaScriptInfo.year +
+    ')';
   return retVal;
 }
 console.log('main.js geladen');
