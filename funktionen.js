@@ -1,2 +1,1 @@
-import {protokolliere} from './protokoll.js';
-protokolliere('funktionen.js geladen');
+console.log('funktionen.js geladen');

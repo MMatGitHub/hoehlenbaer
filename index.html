@@ -3,13 +3,21 @@
   <head lang="de">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <script src="app.js"></script>
+    <script src="main.js"></script>
+    <script src="runtime.js"></script>
+    <script src="funktionen.js"></script>
+    <script src="funktionen_fuer_tabellen.js"></script>
+    <script src="daten.js"></script>
+    <script src="package.json.js"></script>
+
     <link rel="stylesheet" href="mm_style.css">
     <link rel="stylesheet" href="mm_style_w3c.css">
     <link rel="stylesheet" href="mm_style_fuer_tabelle.css">
   <head>
       <title>Höhlenbärenparadies</title>
   </head>
-  <body>
+  <body onload="los_gehts()">
     <div id="app"></div>
         <div id="appzeile"></div>
         <div id="navdemo"></div>
@@ -27,9 +35,10 @@
       <div id="halloDiv">hallo</div>
     </footer>  
  
-    <script type="module" source="app.js">
-        import {aufwachen, testing} from './app.js';
+    <script>
+      function los_gehts(){
         document.getElementById('halloDiv').innerText = testing();
-    </script>    
+      }
+      </script>    
    </body>
 </html>

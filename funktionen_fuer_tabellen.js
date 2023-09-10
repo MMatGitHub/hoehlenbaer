@@ -1,4 +1,4 @@
-export function json2Table(json_daten, inWelcheTabelle){
+function json2Table(json_daten, inWelcheTabelle){
 
   const table = document.createElement("table");
   let tabellenzeile = table.insertRow();
@@ -29,5 +29,4 @@ export function json2Table(json_daten, inWelcheTabelle){
   document.getElementById('tabellendaten').appendChild(table);
 }
 
-import {protokolliere} from './protokoll.js';
-protokolliere('funktionen_fuer_tabellen.js geladen');
+console.log('funktionen_fuer_tabellen.js geladen');

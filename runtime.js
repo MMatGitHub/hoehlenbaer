@@ -1,5 +1,5 @@
 //https://stackoverflow.com/questions/7340726/detect-version-of-javascript
-export const ecmaScriptInfo = (function () {
+const ecmaScriptInfo = (function () {
   // () => { is not allowed
   function getESEdition() {
     const array = [];
@@ -46,5 +46,14 @@ export const ecmaScriptInfo = (function () {
     // `Edition: ${edition} | Year: ${year}` is not allowed
   };
 })();
-import {protokolliere} from './protokoll.js';
-protokolliere('runtime.js geladen');
+
+function toString(){
+  let retVal =
+    'ECMA Script: Edition ' +
+    ecmaScriptInfo.edition +
+    ' (' +
+    ecmaScriptInfo.year +
+    ')';
+    return retVal;
+}
+console.log('runtime.js geladen');

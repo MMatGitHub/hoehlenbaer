@@ -1,6 +1,6 @@
 export const metadaten = [
   {
-    name: 'Hoehlenbaerparadies',
+    appname: 'Hoehlenbaerparadies',
     version: '0.1.5',
     author: 'Duomilia',
   },

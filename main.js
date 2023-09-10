@@ -1,17 +1,13 @@
-import {metadaten} from './package.json.js';
-import {json2Table} from './funktionen_fuer_tabellen.js';
-import {messwerte_as_json_obj, beispieldaten} from './daten.js';
-import {ecmaScriptInfo} from './runtime.js';
-
-export function raus_aus_der_hoehle() {
+function raus_aus_der_hoehle() {
+  let metadaten = messwerte_as_json_obj;
   addKopfzeile();
   addHier(
     'app_author',
-    gibMirEinUnformatiertesElement('p', 'Author: Duomilia')
+    gibMirEinUnformatiertesElement('p', 'Author: '+ metadaten[0]["author"])
   );
   addHier(
     'app_name',
-    gibMirEinUnformatiertesElement('p', '*Appname:* ' + metadaten[0]["name"])
+    gibMirEinUnformatiertesElement('p', '*Appname:* ' + metadaten[0]["appname"])
   );
   addHier(
     'app_version',
@@ -112,14 +108,7 @@ function addStatuszeile(nachricht) {
   einfuegen.appendChild(gibMirEinElementMitTextFormatiert('p', nachricht, ''));
 }
 function addAblaufumgebungInfo(nachricht) {
-  let retVal =
-    'ECMA Script: Edition ' +
-    ecmaScriptInfo.edition +
-    ' (' +
-    ecmaScriptInfo.year +
-    ')';
+  let retVal=ecmaScriptInfo.toString();
   return retVal;
 }
-
-import {protokolliere} from './protokoll.js';
-protokolliere('main.js geladen');
+console.log('main.js geladen');

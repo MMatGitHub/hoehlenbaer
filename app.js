@@ -1,13 +1,11 @@
-import {raus_aus_der_hoehle} from './main.js';
-
-export function aufwachen() {
+function aufwachen() {
   raus_aus_der_hoehle();
   return 'Bin aufgewacht um ' + new Date().toLocaleTimeString() + ' Uhr';
 }
 
-export function testing() {
+function testing() {
   console.log('Bin beim testing...');
-  let testergebnis = do_testing(raus_aus_der_hoehle());
+  let testergebnis = do_testing(aufwachen());
   console.log(testergebnis);
   return testergebnis ;
 }
@@ -23,6 +21,4 @@ function do_testing(functionUnderTest) {
   }
   return "Testing... OK";
 }
-
-import {protokolliere} from './protokoll.js';
-protokolliere('app.js geladen');
+console.log('app.js geladen');

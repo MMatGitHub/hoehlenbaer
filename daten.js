@@ -1,4 +1,4 @@
-export const messwerte_as_json_obj = [
+const messwerte_as_json_obj = [
   { id: 't1', wert: 1468, zeit: 'Jan' },
   { id: 't2', wert: 1494, zeit: 'Feb' },
   { id: 't3', wert: 1540, zeit: 'Mrz' },
@@ -6,7 +6,7 @@ export const messwerte_as_json_obj = [
   { id: 't5', wert: 1638, zeit: 'Mai' },
 ];
 
-export const beispieldaten = [
+const beispieldaten = [
   {
     first_name: 'Toast',
     last_name: 'Follie',
@@ -23,5 +23,4 @@ export const beispieldaten = [
     company: 'Hü & Hott & Co',
   },
 ];
-import {protokolliere} from './protokoll.js';
-protokolliere('daten.js geladen');
+console.log('daten.js geladen');
