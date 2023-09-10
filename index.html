@@ -3,22 +3,13 @@
   <head lang="de">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <script src="app.js"></script>
-    <script src="main.js"></script>
-    <script src="runtime.js"></script>
-    <script src="funktionen.js"></script>
-    <script src="funktionen_fuer_tabellen.js"></script>
-    <script src="daten.js"></script>
-    <script src="package.json.js"></script>
     <link rel="stylesheet" href="mm_style.css">
     <link rel="stylesheet" href="mm_style_w3c.css">
     <link rel="stylesheet" href="mm_style_fuer_tabelle.css">
   <head>
-  
-  </footer>
-    <title>Höhlenbärenparadies</title>
+      <title>Höhlenbärenparadies</title>
   </head>
-  <body onload="TestBaer()">
+  <body>
     <div id="app"></div>
         <div id="appzeile"></div>
         <div id="navdemo"></div>
@@ -26,29 +17,19 @@
             <div id="kopfzeile"></div> 
           </header>
         <div id="spielfeld">
-
         <div id="tabellendaten"></div>
     </div>
     <footer class="w3-container w3-padding-64 w3-center w3-opacity">
-    <div id="app_name"></div>
-    <div id="app_version"></div>
-    <div id="app_author"></div>
-    <div id="statuszeile"></div>
-    <div id="halloDiv">hallo</div>
+      <div id="app_name"></div>
+      <div id="app_version"></div>
+      <div id="app_author"></div>
+      <div id="statuszeile"></div>
+      <div id="halloDiv">hallo</div>
     </footer>  
-    <script>
-        function HalloBaer(){
-          document.getElementById('halloDiv').innerHTML = aufwachen();
-        }
-        function TestBaer(){
-      //    document.getElementById('halloDiv').innerHTML = testing();
-        }
-    </script>
+ 
     <script type="module">
-      import {module_testing} from './app.js';
-      import {raus_aus_der_hoehle} from './main.js';
-      document.getElementById('halloDiv').innerHTML = module_testing();
-      document.getElementById('halloDiv').innerHTML = raus_aus_der_hoehle();
+      import {aufwachen, testing} from './app.js';
+      testing();
     </script>    
    </body>
 </html>

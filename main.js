@@ -1,4 +1,10 @@
+import {metadaten} from './package.json.js';
+import {json2Table} from './funktionen_fuer_tabellen.js';
+import {messwerte_as_json_obj, beispieldaten} from './daten.js';
+import {ecmaScriptInfo} from './runtime.js';
+
 export function raus_aus_der_hoehle() {
+
   addKopfzeile();
   addHier(
     'app_author',

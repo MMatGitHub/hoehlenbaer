@@ -1,4 +1,4 @@
-const messwerte_as_json_obj = [
+export const messwerte_as_json_obj = [
   { id: 't1', wert: 1468, zeit: 'Jan' },
   { id: 't2', wert: 1494, zeit: 'Feb' },
   { id: 't3', wert: 1540, zeit: 'Mrz' },
@@ -6,7 +6,7 @@ const messwerte_as_json_obj = [
   { id: 't5', wert: 1638, zeit: 'Mai' },
 ];
 
-const beispieldaten = [
+export const beispieldaten = [
   {
     first_name: 'Toast',
     last_name: 'Follie',

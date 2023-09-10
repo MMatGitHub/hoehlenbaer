@@ -1,5 +1,5 @@
 //https://stackoverflow.com/questions/7340726/detect-version-of-javascript
-const ecmaScriptInfo = (function () {
+export const ecmaScriptInfo = (function () {
   // () => { is not allowed
   function getESEdition() {
     const array = [];

@@ -1,4 +1,4 @@
-function json2Table(json_daten, inWelcheTabelle){
+export function json2Table(json_daten, inWelcheTabelle){
 
   const table = document.createElement("table");
   let tabellenzeile = table.insertRow();
