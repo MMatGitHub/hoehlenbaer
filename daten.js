@@ -36,7 +36,6 @@ const messwerte_as_json_obj = [
   { id: '2023', wert: 8787.9, zeit: '19. Aug' },
   { id: '2023', wert: 8791.9, zeit: '23. Aug' },
   { id: '2023', wert: 8801.0, zeit: '1. Sep' },
-
 ];
 
 const beispieldaten = [
