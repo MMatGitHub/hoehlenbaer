@@ -1,15 +1,19 @@
 function json2Table(json_daten, inWelcheTabelle) {
   const table = document.createElement('table');
+  
   let tabellenzeile = table.insertRow();
-
+  
   let spalten = [];
-
+  
   for (let x of Object.keys(json_daten[0])) {
     if (spalten.indexOf(x) === -1) {
       //Gibt keys mehrfach
       spalten.push(x);
     }
   }
+  //zusätzliche Spalten einfügen
+  const SchritteZurwertspalteNachLinks = 4;
+  spalten.push('Mittelwert');
   spalten.push('delta');
 
   for (let ueberschrift of spalten) {
@@ -26,9 +30,8 @@ function json2Table(json_daten, inWelcheTabelle) {
       if (j === spalten.length - 1) {
         try {
           if (i === 0) {
-            tabCell.innerText = '';
+            tabCell.innerText = '0';
           }
-          let SchritteZurwertspalteNachLinks = 3;
           let delta = Number(
             json_daten[i][spalten[j - SchritteZurwertspalteNachLinks]]
           );
@@ -42,6 +45,25 @@ function json2Table(json_daten, inWelcheTabelle) {
           } else {
             tabCell.innerText = differenz;
           }
+         
+          let timedifferenzAlt = Number(json_daten[i - 1][spalten[j - SchritteZurwertspalteNachLinks]]);
+          let timedifferenz = json_daten[i][spalten[j - SchritteZurwertspalteNachLinks]];
+          timedifferenz = new Date(timedifferenzAlt)-new Date(timedifferenz) + ' Tage';
+        
+          const str = '2022-06-15';
+          
+          const datum1 = new Date(str);
+
+          var datum2 = new Date("12/25/2021");
+
+          const difference = datum2.getTime()-datum1.getTime();
+
+          let years = Math.round(difference.getTime());
+          
+          const asdf = difference;
+
+          tabCell.innerText = "asdf" //.toDateString(); //Date.parse("2022-01-02").toLocaleString() ;
+        
         } catch (e) {
           console.log(e.stack);
         }
