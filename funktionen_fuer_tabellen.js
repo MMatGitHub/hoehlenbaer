@@ -4,6 +4,12 @@ function json2Table(json_daten, inWelcheTabelle) {
   let tabellenzeile = table.insertRow();
   
   let spalten = [];
+  let tagespalte = [];
+  let deltaspalte = [] ;
+  let mwresult = [];
+  let mw2022result = [];
+  let mw2023result = [];
+  let DieWerte = [];
   
   for (let x of Object.keys(json_daten[0])) {
     if (spalten.indexOf(x) === -1) {
@@ -13,8 +19,13 @@ function json2Table(json_daten, inWelcheTabelle) {
   }
   //zusätzliche Spalten einfügen
   const SchritteZurwertspalteNachLinks = 4;
-  spalten.push('Mittelwert');
-  spalten.push('delta');
+  const SchritteZurZeitspalteNachLinks = 2;
+  const Tage_spaltenname='Tage';
+  const Delta_spaltenname='Delta';
+  const Mittelwert_spaltenname='MW';
+  spalten.push(Tage_spaltenname);
+  spalten.push(Delta_spaltenname);
+  spalten.push(Mittelwert_spaltenname);
 
   for (let ueberschrift of spalten) {
     let th = document.createElement('th');
@@ -27,52 +38,153 @@ function json2Table(json_daten, inWelcheTabelle) {
     for (let j = 0; j < spalten.length; j++) {
       let tabCell = tabellenzeile.insertCell(-1);
       tabCell.innerHTML = json_daten[i][spalten[j]];
-      if (j === spalten.length - 1) {
-        try {
-          if (i === 0) {
-            tabCell.innerText = '0';
-          }
+      //Werte
+      if (j == 1) //"wert") 
+      {
+        DieWerte.push(json_daten[i][spalten[j]]);
+      }
+      //Wertedifferenz
+      if (spalten[j] === Delta_spaltenname) {
+        if (i>0){
           let delta = Number(
             json_daten[i][spalten[j - SchritteZurwertspalteNachLinks]]
           );
           let deltaAlt = Number(
             json_daten[i - 1][spalten[j - SchritteZurwertspalteNachLinks]]
           );
-          let differenz = 0;
-          differenz = Number(Math.round(deltaAlt - delta));
-          if (differenz > 0) {
-            tabCell.innerText = '+' + differenz;
-          } else {
-            tabCell.innerText = differenz;
-          }
-         
-          let timedifferenzAlt = Number(json_daten[i - 1][spalten[j - SchritteZurwertspalteNachLinks]]);
-          let timedifferenz = json_daten[i][spalten[j - SchritteZurwertspalteNachLinks]];
-          timedifferenz = new Date(timedifferenzAlt)-new Date(timedifferenz) + ' Tage';
-        
-          const str = '2022-06-15';
-          
-          const datum1 = new Date(str);
-
-          var datum2 = new Date("12/25/2021");
-
-          const difference = datum2.getTime()-datum1.getTime();
-
-          let years = Math.round(difference.getTime());
-          
-          const asdf = difference;
-
-          tabCell.innerText = "asdf" //.toDateString(); //Date.parse("2022-01-02").toLocaleString() ;
-        
-        } catch (e) {
-          console.log(e.stack);
+          let berechneterWert = deltaspaltebefuellen(deltaAlt, delta);
+          deltaspalte[i]=berechneterWert;
+          tabCell.innerText=  berechneterWert;
         }
       }
+      //Tagesdifferenz
+      if (spalten[j] === Tage_spaltenname) {
+        if (i>0){
+          let delta = String(
+            json_daten[i][spalten[j - SchritteZurZeitspalteNachLinks]]
+          );
+          let deltaAlt = String(
+            json_daten[i - 1][spalten[j - SchritteZurZeitspalteNachLinks]]
+          );
+          let berechneterWert = timediffspaltebefuellen(deltaAlt, delta);
+          tagespalte[i]=berechneterWert;
+          tabCell.innerText=  berechneterWert;
+        }
+      }
+      //Mittelwert
+      if (spalten[j] === Mittelwert_spaltenname) {
+        let mittelwert = Mittelwertspaltebefuellen(deltaspalte[i],tagespalte[i]);
+        let spalte_2=2;
+        let aktuellesJahr = String(
+          json_daten[i][spalten[spalte_2]]
+        );
+        if (aktuellesJahr.includes("2022")){
+          mw2022result.push(mittelwert);
+        }else{
+          mw2023result.push(mittelwert);
+        }
+        mwresult.push(mittelwert);
+        tabCell.innerText= mittelwert;
+       // jammer("hä:" +aktuellesJahr);
+      }
     }
+    
   }
-
+  tabellenzeile = table.insertRow();
+  //jammer("MW-Resultarray: "+mwresult.toString());
+  let w2022=document.createElement("p");
+  let w2023 = document.createElement("p");
+  let wAll = document.createElement("p");
+  let sumVonAnbeginn = document.createElement("p");
+  w2022.innerHTML="MW (2022): " +calculateMean(mw2022result);
+  w2023.innerHTML="MW (2023): " +calculateMean(mw2023result);
+  wAll.innerHTML="MW (ges.): " +calculateMean(mwresult);
+  let ersterWert = Number(DieWerte[0]);
+  let letzerWert = Number(DieWerte[DieWerte.length-1]);
+  let dieSumme = Number(letzerWert-ersterWert);
+  dieSumme = dieSumme.toFixed(2);
+  sumVonAnbeginn.innerHTML="Gesamt: "+(dieSumme);
+  tabellenzeile.appendChild(w2022); 
+  tabellenzeile.appendChild(w2023); 
+  tabellenzeile.appendChild(wAll); 
+  tabellenzeile.appendChild(sumVonAnbeginn); 
+  //tabellenzeile.appendChild(document.createTextNode("("+DieWerte[DieWerte.length-1].toString()+" -"+DieWerte[0].toString()+")"));
+   //jammer("hä:" +DieWerte.toString());
+  //jammer("hä:" +DieWerte[0].toString());
+  //jammer("hä:" +DieWerte[DieWerte.length-1].toString());
+   
   table.setAttribute('class', 'mm-tabelle');
   document.getElementById('tabellendaten').appendChild(table);
+}
+function Mittelwertspaltebefuellen(zaehler, nenner){ 
+  let differenz = 0;
+  differenz = zaehler / nenner;
+  differenz = differenz.toFixed(2);
+  let retVal= "nix";
+  retVal = differenz;
+  return retVal;
+}
+
+function deltaspaltebefuellen(alt, neu){ 
+    let differenz = 0;
+    differenz = Number(Math.round(alt - neu));
+    let retVal= "nix";
+    if (differenz > 0) {
+      retVal = '+' + differenz;
+    } else {
+      retVal = differenz;
+    }
+    return retVal;
+}
+
+
+function timediffspaltebefuellen(alt, neu){
+    return dateDifference(alt, neu);
+}
+
+function calculateMean(numbers) {
+  if (numbers.length === 0) {
+    return NaN; // chatGPT: Return NaN if the array is empty to handle this edge case
+  }
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    let einWert=Number(numbers[i]);
+    if (typeof einWert !== 'number' || isNaN(einWert) || !isFinite(einWert)) {
+      continue; // Skip non-numeric, NaN, or Infinity values
+    }
+    sum += einWert;
+  }
+  //jammer("Summe: "+sum);
+  if (sum === 0) {
+    jammer("Nullsumme-keine Daten: Komisch!");
+    return 0;
+  }
+  const mean = sum / numbers.length;
+  //jammer("Mittelwert: "+mean);
+  return mean.toFixed(2);
+}
+function jammer(was){
+  let buggy = document.createElement('p');
+  let um = document.createTextNode("DEBUG at (" + getCurrentFormattedTime()+"): "+ was.toString()); 
+  document.getElementById('debugDiv').appendChild(buggy).appendChild (um);
+}
+
+function dateDifference(date1Str, date2Str) {
+  const [day1, month1, year1] = date1Str.split('.').map(Number);
+  const [day2, month2, year2] = date2Str.split('.').map(Number);
+
+  const date1 = new Date(year1, month1 - 1, day1);
+  const date2 = new Date(year2, month2 - 1, day2);
+
+  const timeDifference = Math.abs(date2 - date1); // chatGPT: Calculate absolute time difference in milliseconds
+
+  const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24)); // Convert milliseconds to days
+
+  return daysDifference;
+}
+
+function getCurrentFormattedTime() {
+  return new Date().toLocaleTimeString() + ' Uhr'
 }
 
 console.log('funktionen_fuer_tabellen.js geladen');

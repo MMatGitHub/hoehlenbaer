@@ -2,22 +2,23 @@ function raus_aus_der_hoehle() {
   addKopfzeile();
   addHier(
     'app_author',
-    gibMirEinUnformatiertesElement('p', 'Author: '+ metadaten[0]["author"])
+    gibMirEinUnformatiertesElement('p', 'Author: ' + metadaten[0]['author'])
   );
   addHier(
     'app_name',
-    gibMirEinUnformatiertesElement('p', '*Appname:* ' + metadaten[0]["appname"])
+    gibMirEinUnformatiertesElement('p', '*Appname:* ' + metadaten[0]['appname'])
   );
   addHier(
     'app_version',
-    gibMirEinUnformatiertesElement('p', 'Version: ' + metadaten[0]["version"])
+    gibMirEinUnformatiertesElement('p', 'Version: ' + metadaten[0]['version'])
   );
   json2Table(messwerte_as_json_obj, 'messwerttabellenausgabe');
 
   document.getElementById('appzeile').innerHTML = getAppzeile();
   document.getElementById('navdemo').innerHTML = getSmallAppzeile();
   document.getElementById('statuszeile').innerHTML = addAblaufumgebungInfo();
-  document.getElementById('halloDiv').innerText = "Brummte um "+new Date().toLocaleTimeString() + ' Uhr';
+  document.getElementById('halloDiv').innerText =
+    'Brummte um ' + new Date().toLocaleTimeString() + ' Uhr';
   return 'Brumm, Brummel, Gähn, ...';
 }
 
@@ -107,7 +108,7 @@ function addStatuszeile(nachricht) {
   einfuegen.appendChild(gibMirEinElementMitTextFormatiert('p', nachricht, ''));
 }
 function addAblaufumgebungInfo(nachricht) {
-  let retVal=ecmaScriptInfo.toString();
+  let retVal = ecmaScriptInfo.toString();
   return retVal;
 }
 console.log('main.js geladen');
