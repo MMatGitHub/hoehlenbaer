@@ -14,7 +14,9 @@ function raus_aus_der_hoehle() {
   );
   json2Table(messwerte_as_json_obj, 'messwerttabellenausgabe');
 
-  document.getElementById('appzeile').innerHTML = getAppzeile();
+  //document.getElementById('appzeile').innerHTML = getAppzeile();
+  document.getElementById('appzeile').innerHTML = generateAppzeileDynamically();
+  document.getElementById('appzeile').classList.add('w3-top');
   document.getElementById('navdemo').innerHTML = getSmallAppzeile();
   document.getElementById('statuszeile').innerHTML = addAblaufumgebungInfo();
   document.getElementById('halloDiv').innerText =
@@ -96,26 +98,7 @@ function getAppzeile() {
       <a href="../mm/mm.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">mm</a>
     </div>
   </div>`;
-  let erstes = gibMirEinFormatiertesElementOhneText('div', 'w3-top');
-  let naechstes = gibMirEinFormatiertesElementOhneText(
-    'div',
-    'w3-bar w3-orange w3-card w3-left-align w3-large'
-    );
-    erstes.appendChild(naechstes);
-    
-    nnaechstes = gibMirEinElementMitTextFormatiert(
-      'a',
-      'h ome',
-      'w3-bar-item w3-button w3-padding-large w3-white'
-      );
-      
-      nnaechstes = gibMirEinElementMitTextFormatiert('a', 'Ein Test', 'w3-bar-item w3-button w3-padding-large w3-white');
-      //nnaechstes.innerHTML='Hallo Welt';
-      jammer(nnaechstes.innerHTML);
-      naechstes.appendChild(nnaechstes);
-      //retVal= naechstes;
-      riesenjammer(naechstes);
-      return retVal.innerHTML;
+  return retVal;
 }
 function getSmallAppzeile() {
   return `<div id="navdemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
@@ -138,4 +121,47 @@ function addAblaufumgebungInfo(nachricht) {
   let retVal = ecmaScriptInfo.toString();
   return retVal;
 }
+function addStyledButtonsToDiv(buttonTextArray, cssClassliste) {
+  const n = buttonTextArray.length;
+  //let myDiv = document.createElement('div');
+  let myDiv = gibMirEinFormatiertesElementOhneText(
+    'div',
+    'w3-bar w3-orange w3-card w3-left-align w3-large'
+  );
+  for (let i = 0; i < n; i++) {
+    const button = document.createElement('button');
+    button.textContent = buttonTextArray[i];
+    myDiv.appendChild(button);
+  }
+  return myDiv;
+}
+
+function styleMich(mich, cssClasses) {
+  let retVal = mich;
+  let myStringArray = [];
+  if (cssClasses) {
+    if (cssClasses.includes(' ')) {
+      myStringArray = cssClasses.split(' ');
+    } else {
+      myStringArray[0] = cssClasses;
+    }
+  }
+  if (myStringArray.length > 0) {
+    for (const s of myStringArray) {
+      retVal.classList.add(s);
+    }
+  }
+}
+
+function generateAppzeileDynamically() {
+  //let existingDiv = document.getElementById('appzeile');
+  let newDiv = gibMirEinFormatiertesElementOhneText('div', 'w3-top');
+  let divWithButtons = addStyledButtonsToDiv(
+    ['home', 'kids', 'mie', 'mm'],
+    'w3-bar-item w3-button w3-padding-large w3-white'
+  );
+  newDiv.appendChild(divWithButtons);
+  return newDiv.innerHTML;
+}
+
 console.log('main.js geladen');
