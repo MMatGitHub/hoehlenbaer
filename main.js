@@ -131,19 +131,21 @@ function addStyledButtonsToDiv(buttonTextArray, cssClassliste) {
   for (let i = 0; i < n; i++) {
     let button = document.createElement('button');
     button.textContent = buttonTextArray[i];
-    styleMich(button, cssClassliste);
-
     if (i === 0) {
       button = styleMich(
         button,
         'w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red'
-      );
-    }
+        );
+      }
     if (i === 1) {
       button = styleMich(
         button,
         'w3-bar-item w3-button w3-padding-large w3-white'
-      );
+        );
+      }
+      
+    if (i > 1) {
+      styleMich(button, cssClassliste);
     }
     myDiv.appendChild(button);
   }
