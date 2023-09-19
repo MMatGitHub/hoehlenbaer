@@ -129,8 +129,22 @@ function addStyledButtonsToDiv(buttonTextArray, cssClassliste) {
     'w3-bar w3-orange w3-card w3-left-align w3-large'
   );
   for (let i = 0; i < n; i++) {
-    const button = document.createElement('button');
+    let button = document.createElement('button');
     button.textContent = buttonTextArray[i];
+    styleMich(button, cssClassliste);
+
+    if (i === 0) {
+      button = styleMich(
+        button,
+        'w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red'
+      );
+    }
+    if (i === 1) {
+      button = styleMich(
+        button,
+        'w3-bar-item w3-button w3-padding-large w3-white'
+      );
+    }
     myDiv.appendChild(button);
   }
   return myDiv;
@@ -151,14 +165,15 @@ function styleMich(mich, cssClasses) {
       retVal.classList.add(s);
     }
   }
+  return mich;
 }
 
 function generateAppzeileDynamically() {
-  //let existingDiv = document.getElementById('appzeile');
-  let newDiv = gibMirEinFormatiertesElementOhneText('div', 'w3-top');
+  let newDiv = document.createElement('div');
+
   let divWithButtons = addStyledButtonsToDiv(
-    ['home', 'kids', 'mie', 'mm'],
-    'w3-bar-item w3-button w3-padding-large w3-white'
+    ['menu', 'home', 'kids', 'mie', 'mm'],
+    'w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white'
   );
   newDiv.appendChild(divWithButtons);
   return newDiv.innerHTML;
