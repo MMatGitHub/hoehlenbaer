@@ -66,10 +66,14 @@ function gibMirEinElementMitTextFormatiert(
   mein_mm_css_Format
 ) {
   let retVal = document.createElement(meinTag);
-  retVal.innerHTML = meinText;
+  if ('' !== meinText) {
+    retVal.innerHTML = meinText;
+  }
+
   if ('' === mein_mm_css_Format) {
     return retVal;
   }
+
   let myStringArray = mein_mm_css_Format.split(' ');
   for (const s of myStringArray) {
     retVal.classList.add(s);
@@ -77,8 +81,11 @@ function gibMirEinElementMitTextFormatiert(
   return retVal;
 }
 
+function gibMirEinFormatiertesElementOhneText(meinTag, mein_mm_css_Format) {
+  return gibMirEinElementMitTextFormatiert(meinTag, '', mein_mm_css_Format);
+}
 function getAppzeile() {
-  return `<div class="w3-top">
+  let retVal = `<div class="w3-top">
     <div class="w3-bar w3-orange w3-card w3-left-align w3-large">
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
       <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
@@ -89,6 +96,26 @@ function getAppzeile() {
       <a href="../mm/mm.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">mm</a>
     </div>
   </div>`;
+  let erstes = gibMirEinFormatiertesElementOhneText('div', 'w3-top');
+  let naechstes = gibMirEinFormatiertesElementOhneText(
+    'div',
+    'w3-bar w3-orange w3-card w3-left-align w3-large'
+    );
+    erstes.appendChild(naechstes);
+    
+    nnaechstes = gibMirEinElementMitTextFormatiert(
+      'a',
+      'h ome',
+      'w3-bar-item w3-button w3-padding-large w3-white'
+      );
+      
+      nnaechstes = gibMirEinElementMitTextFormatiert('a', 'Ein Test', 'w3-bar-item w3-button w3-padding-large w3-white');
+      //nnaechstes.innerHTML='Hallo Welt';
+      jammer(nnaechstes.innerHTML);
+      naechstes.appendChild(nnaechstes);
+      //retVal= naechstes;
+      riesenjammer(naechstes);
+      return retVal.innerHTML;
 }
 function getSmallAppzeile() {
   return `<div id="navdemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">

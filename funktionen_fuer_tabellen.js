@@ -163,11 +163,7 @@ function calculateMean(numbers) {
   //jammer("Mittelwert: "+mean);
   return mean.toFixed(2);
 }
-function jammer(was){
-  let buggy = document.createElement('p');
-  let um = document.createTextNode("DEBUG at (" + getCurrentFormattedTime()+"): "+ was.toString()); 
-  document.getElementById('debugDiv').appendChild(buggy).appendChild (um);
-}
+
 
 function dateDifference(date1Str, date2Str) {
   const [day1, month1, year1] = date1Str.split('.').map(Number);
