@@ -15,7 +15,7 @@ function raus_aus_der_hoehle() {
   json2Table(messwerte_as_json_obj, 'messwerttabellenausgabe');
 
   //document.getElementById('appzeile').innerHTML = getAppzeile();
-  document.getElementById('appzeile').innerHTML = generateAppzeileDynamically();
+  generateAppzeileDynamically();
   document.getElementById('appzeile').classList.add('w3-top');
   document.getElementById('navdemo').innerHTML = getSmallAppzeile();
   document.getElementById('statuszeile').innerHTML = addAblaufumgebungInfo();
@@ -121,13 +121,10 @@ function addAblaufumgebungInfo(nachricht) {
   let retVal = ecmaScriptInfo.toString();
   return retVal;
 }
-function addStyledButtonsToDiv(buttonTextArray, cssClassliste) {
+function addStyledButtonsToDiv(myDiv, buttonTextArray, cssClassliste) {
   const n = buttonTextArray.length;
   //let myDiv = document.createElement('div');
-  let myDiv = gibMirEinFormatiertesElementOhneText(
-    'div',
-    'w3-bar w3-orange w3-card w3-left-align w3-large'
-  );
+ 
   for (let i = 0; i < n; i++) {
     let button = document.createElement('button');
     button.textContent = buttonTextArray[i];
@@ -135,15 +132,15 @@ function addStyledButtonsToDiv(buttonTextArray, cssClassliste) {
       button = styleMich(
         button,
         'w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red'
-        );
-      }
+      );
+    }
     if (i === 1) {
       button = styleMich(
         button,
         'w3-bar-item w3-button w3-padding-large w3-white'
-        );
-      }
-      
+      );
+    }
+
     if (i > 1) {
       styleMich(button, cssClassliste);
     }
@@ -167,18 +164,19 @@ function styleMich(mich, cssClasses) {
       retVal.classList.add(s);
     }
   }
-  return mich;
+  return retVal;
 }
 
 function generateAppzeileDynamically() {
-  let newDiv = document.createElement('div');
-
-  let divWithButtons = addStyledButtonsToDiv(
+  const innerAppzeilenDiv = gibMirEinFormatiertesElementOhneText(
+    'div',
+    'w3-bar w3-orange w3-card w3-left-align w3-large'
+  );
+  const divWithButtons = addStyledButtonsToDiv(innerAppzeilenDiv, 
     ['menu', 'home', 'kids', 'mie', 'mm'],
     'w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white'
   );
-  newDiv.appendChild(divWithButtons);
-  return newDiv.innerHTML;
+  document.getElementById('appzeile').appendChild(divWithButtons);
 }
 
 console.log('main.js geladen');
