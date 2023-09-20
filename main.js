@@ -133,6 +133,10 @@ function addStyledButtonsToDiv(myDiv, buttonTextArray, cssClassliste) {
         button,
         'w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red'
       );
+      button.onclick = function () {
+        myFunction();
+        //alert("Button is clicked");
+      };
     }
     if (i === 1) {
       button = styleMich(
@@ -144,10 +148,21 @@ function addStyledButtonsToDiv(myDiv, buttonTextArray, cssClassliste) {
     if (i > 1) {
       styleMich(button, cssClassliste);
     }
+   
     myDiv.appendChild(button);
   }
   return myDiv;
 }
+
+function myFunction() {
+  jammer("ToDo Menu anzeigen.");
+    var x = document.getElementById("halloDiv");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else { 
+      x.className = x.className.replace(" w3-show", "");
+    }
+ }
 
 function styleMich(mich, cssClasses) {
   let retVal = mich;
