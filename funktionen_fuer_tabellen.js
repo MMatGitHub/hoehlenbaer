@@ -1,7 +1,7 @@
-function json2Table(json_daten, inWelcheTabelle) {
-  const table = document.createElement('table');
+function json2Table(json_daten) {
+  let neue_tabelle = document.createElement('table');
   
-  let tabellenzeile = table.insertRow();
+  let tabellenzeile = neue_tabelle.insertRow();
   
   let spalten = [];
   let tagespalte = [];
@@ -34,7 +34,7 @@ function json2Table(json_daten, inWelcheTabelle) {
   }
 
   for (let i = 0; i < json_daten.length; i++) {
-    tabellenzeile = table.insertRow();
+    tabellenzeile = neue_tabelle.insertRow();
     for (let j = 0; j < spalten.length; j++) {
       let tabCell = tabellenzeile.insertCell(-1);
       tabCell.innerHTML = json_daten[i][spalten[j]];
@@ -90,7 +90,7 @@ function json2Table(json_daten, inWelcheTabelle) {
     }
     
   }
-  tabellenzeile = table.insertRow();
+  tabellenzeile = neue_tabelle.insertRow();
   //jammer("MW-Resultarray: "+mwresult.toString());
   let w2022=document.createElement("p");
   let w2023 = document.createElement("p");
@@ -113,8 +113,9 @@ function json2Table(json_daten, inWelcheTabelle) {
   //jammer("hä:" +DieWerte[0].toString());
   //jammer("hä:" +DieWerte[DieWerte.length-1].toString());
    
-  table.setAttribute('class', 'mm-tabelle');
-  document.getElementById('tabellendaten').appendChild(table);
+  neue_tabelle.setAttribute('class', 'mm-tabelle');
+  document.getElementById('spielfeld').innerHTML='';
+  document.getElementById('spielfeld').appendChild(neue_tabelle);
 }
 function Mittelwertspaltebefuellen(zaehler, nenner){ 
   let differenz = 0;
@@ -159,22 +160,22 @@ function calculateMean(numbers) {
     jammer("Nullsumme-keine Daten: Komisch!");
     return 0;
   }
-  const mean = sum / numbers.length;
+  let mean = sum / numbers.length;
   //jammer("Mittelwert: "+mean);
   return mean.toFixed(2);
 }
 
 
 function dateDifference(date1Str, date2Str) {
-  const [day1, month1, year1] = date1Str.split('.').map(Number);
-  const [day2, month2, year2] = date2Str.split('.').map(Number);
+  let [day1, month1, year1] = date1Str.split('.').map(Number);
+  let [day2, month2, year2] = date2Str.split('.').map(Number);
 
-  const date1 = new Date(year1, month1 - 1, day1);
-  const date2 = new Date(year2, month2 - 1, day2);
+  let date1 = new Date(year1, month1 - 1, day1);
+  let date2 = new Date(year2, month2 - 1, day2);
 
-  const timeDifference = Math.abs(date2 - date1); // chatGPT: Calculate absolute time difference in milliseconds
+  let timeDifference = Math.abs(date2 - date1); // chatGPT: Calculate absolute time difference in milliseconds
 
-  const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24)); // Convert milliseconds to days
+  let daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24)); // Convert milliseconds to days
 
   return daysDifference;
 }

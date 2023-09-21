@@ -1,7 +1,8 @@
 //https://stackoverflow.com/questions/7340726/detect-version-of-javascript
-const ecmaScriptInfo = (function () {
-  // () => { is not allowed
-  function getESEdition() {
+
+class runtime {
+
+  getESEdition() {
     const array = [];
     switch (true) {
       case !Array.isArray:
@@ -27,33 +28,26 @@ const ecmaScriptInfo = (function () {
     }
   }
 
-  function getESYear(edition) {
+  getESYear(edition) {
     return (
       {
         3: 1999,
         5: 2009,
-      }[edition] || 2009 + edition
+      }[this.getESEdition()] || 2009 + this.getESEdition()
     );
   }
 
-  const edition = getESEdition();
-  const year = getESYear(edition);
-
-  return {
-    edition: edition, // usually shortened [edition,]
-    year: year, // usually shortened [year,]
-    text: 'Edition: ' + edition + ' | Year: ' + year,
-    // `Edition: ${edition} | Year: ${year}` is not allowed
-  };
-})();
-
-function toString(){
-  let retVal =
-    'ECMA Script: Edition ' +
-    ecmaScriptInfo.edition +
-    ' (' +
-    ecmaScriptInfo.year +
-    ')';
-    return retVal;
+  toLesbar(){
+    let retVal =
+      'ECMA Script: Edition ' +
+      this.getESEdition() +
+      ' (' +
+      this.getESYear() +
+      ')';
+      return retVal;
+  }
+  
 }
+
 console.log('runtime.js geladen');
+ 

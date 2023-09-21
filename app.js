@@ -17,6 +17,9 @@ function do_testing() {
     eval(raus_aus_der_hoehle());
   } catch (e) {
     if (e instanceof SyntaxError) {
+      if (e.message.includes("expected expression, got '...'")){
+        return "...";
+      }
       return 'ERR: (' + e.name + ' ' + e.message+ ') ' + e.stack;
     }
     return 'Error (' + e.message + ') ' + e.stack;
@@ -24,3 +27,6 @@ function do_testing() {
   return 'Testing... OK at (' + new Date().toLocaleTimeString() + ' Uhr' + ')';
 }
 console.log('app.js geladen');
+
+
+

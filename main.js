@@ -2,7 +2,7 @@ function raus_aus_der_hoehle() {
   addKopfzeile();
   addHier(
     'app_author',
-    gibMirEinUnformatiertesElement('p', 'Author: ' + metadaten[0]['author'])
+    gibMirEinUnformatiertesElement('p', '*Author*: ' + metadaten[0]['author'])
   );
   addHier(
     'app_name',
@@ -10,17 +10,20 @@ function raus_aus_der_hoehle() {
   );
   addHier(
     'app_version',
-    gibMirEinUnformatiertesElement('p', 'Version: ' + metadaten[0]['version'])
+    gibMirEinUnformatiertesElement('p', '*Version*: ' + metadaten[0]['version'])
   );
-  json2Table(messwerte_as_json_obj, 'messwerttabellenausgabe');
+
 
   //document.getElementById('appzeile').innerHTML = getAppzeile();
   generateAppzeileDynamically();
   document.getElementById('appzeile').classList.add('w3-top');
   document.getElementById('navdemo').innerHTML = getSmallAppzeile();
-  document.getElementById('statuszeile').innerHTML = addAblaufumgebungInfo();
+  addAblaufumgebungInfo();
   document.getElementById('halloDiv').innerText =
     'Brummte um ' + new Date().toLocaleTimeString() + ' Uhr';
+
+  let mieSeite = new Mie("Die Messwerte tabellarisch anzeigen");
+  mieSeite.ausfuehren();
   return 'Brumm, Brummel, Gähn, ...';
 }
 
@@ -118,8 +121,8 @@ function addStatuszeile(nachricht) {
   einfuegen.appendChild(gibMirEinElementMitTextFormatiert('p', nachricht, ''));
 }
 function addAblaufumgebungInfo(nachricht) {
-  let retVal = ecmaScriptInfo.toString();
-  return retVal;
+  let retVal = new runtime().toLesbar();
+  addStatuszeile("*Runtime*: "+retVal);
 }
 function addStyledButtonsToDiv(myDiv, buttonTextArray, cssClassliste) {
   const n = buttonTextArray.length;
@@ -148,7 +151,22 @@ function addStyledButtonsToDiv(myDiv, buttonTextArray, cssClassliste) {
     if (i > 1) {
       styleMich(button, cssClassliste);
     }
-   
+    if (buttonTextArray[i]==="mm") {
+      button.onclick = function () {
+        new MM().hol("<p>mmmmmmmmmm</p>");
+      };
+    }
+    if (buttonTextArray[i]==="kids") {
+      button.onclick = function () {
+        new MM().hol("<p>kiddies</p>");
+      };
+    }
+    if (buttonTextArray[i]==="mie") {
+      button.onclick = function () {
+        let mieSeite = new Mie("Die Messwerte tabellarisch anzeigen");
+        mieSeite.ausfuehren();
+      };
+    }
     myDiv.appendChild(button);
   }
   return myDiv;
