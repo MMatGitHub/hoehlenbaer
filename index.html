@@ -14,38 +14,101 @@
     <script src="funktionen_fuer_tabellen.js"></script>
     <script src="daten.js"></script>
     <script src="package.json.js"></script>
-
+    
     <link rel="stylesheet" href="mm_style.css">
     <link rel="stylesheet" href="mm_style_w3c.css">
     <link rel="stylesheet" href="mm_style_fuer_tabelle.css">
-  <head>
-      <title>Höhlenbärenparadies</title>
+    <script>
+    function allowCrossOrigin(img, url) {
+       if (url.indexOf('https://') !== 0 && url.indexOf('http://') !== 0) {
+          // only allow cross-origin requests for images that are hosted on a secure
+          
+          // (HTTPS/HTTP) server
+          return;
+       }  
+       // create a new Image object and set its src property to the url of the image
+       
+       // that we want to load
+       var image = new Image();
+       image.src = url;
+       
+       // when the image has loaded, set the src property of the img element to the
+       
+       // url of the image
+       image.onload = function() {
+          img.src = url;
+       };
+    }
+ </script>
+    <head>
+    <title>Höhlenbärenparadies</title>
   </head>
   <body onload="los_gehts()">
+  <img src="/pic/hoehli.jpg" alt="Flowers in Chania" width="888" height="777">
+   
+
     <div id="app"></div>
         <div id="appzeile"></div>
         <div id="navdemo"></div>
-          <header class="w3-container w3-blue w3-center" style="padding:128px 16pxtit">
+        <header class="w3-container w3-blue w3-center" style="padding:128px 16pxtit">
             <div id="kopfzeile"></div> 
           </header>
-        <div id="spielfeld">
+          <div id="spielfeld">
         <div id="tabellendaten"></div>
-    </div>
+      </div>
     <footer class="w3-container w3-padding-64 w3-center w3-opacity">
-      <div id="app_name"></div>
-      <div id="app_version"></div>
+    <div id="app_name"></div>
+    <div id="app_version"></div>
       <div id="app_author"></div>
       <div id="statuszeile"></div>
       <div id="halloDiv">hallo</div>
-      <img src="Hoehli.png" alt="Stickman" width="99" height="66">
       <div id="debugDiv"></div>
     </footer>  
     <script>
-      function los_gehts(){
-        //testing() oder aufwachen();
-        //document.getElementById('halloDiv').innerText = aufwachen();
-        document.getElementById('halloDiv').innerText = testing();
+    function los_gehts(){
+      //testing() oder aufwachen();
+      //document.getElementById('halloDiv').innerText = aufwachen();
+      document.getElementById('halloDiv').innerText = testing();
+    }
+    function allowCrossOrigin(img, url) {
+         if (url.indexOf('https://') !== 0 && url.indexOf('http://') !== 0) {
+            // only allow cross-origin requests for images that are hosted on a secure
+            
+            // (HTTPS/HTTP) server
+            return;
+         }  
+         // create a new Image object and set its src property to the url of the image
+         
+         // that we want to load
+         var image = new Image();
+         image.src = url;
+         
+         // when the image has loaded, set the src property of the img element to the
+         
+         // url of the image
+         image.onload = function() {
+            img.src = url;
+         };
       }
-      </script>    
-   </body>
+    </script>    
+   
+  <img id='local-image' src='https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067__340.png' width='200' height='200'>
+  <!-- define another img element and try to set its src property to
+  an image that is hosted on a different domain -->
+  <img id='remote-image' width='200' height='200'>
+  <script>
+     // get a reference to the img element with id="remote-image"
+     var remoteImage = document.getElementById('remote-image');
+     
+     // set the src property of the img element to the url of the image that we want
+     // to load
+     remoteImage.src = 'Hoehli.png';
+     
+     // call the allowCrossOrigin function, passing in the img element and the url
+     // of the image that we want to load
+     allowCrossOrigin(remoteImage, remoteImage.src);
+  </script>  
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4
+//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==" alt="Red dot" />
+</body>
 </html>

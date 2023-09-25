@@ -1,4 +1,7 @@
 function jammer(was) {
+  if (null==was){
+    was ="udef";
+  }
   let buggy = document.createElement('p');
   let um = document.createTextNode(
     'DEBUG at (' + getCurrentFormattedTime() + '): ' + was.toString()
