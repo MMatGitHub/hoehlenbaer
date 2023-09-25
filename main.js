@@ -155,7 +155,7 @@ function addStyledButtonsToDiv(myDiv, buttonTextArray, cssClassliste) {
     }
     if (buttonTextArray[i]==="home") {
       button.onclick = function () {
-        new Home().ausfuehren("test");
+        new Home('Heimathöhle again').ausfuehren();
       };
     }    if (buttonTextArray[i]==="mm") {
       button.onclick = function () {
