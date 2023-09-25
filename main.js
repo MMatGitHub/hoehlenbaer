@@ -22,8 +22,10 @@ function raus_aus_der_hoehle() {
   document.getElementById('halloDiv').innerText =
     'Brummte um ' + new Date().toLocaleTimeString() + ' Uhr';
 
-  let mieSeite = new Mie("Die Messwerte tabellarisch anzeigen");
-  mieSeite.ausfuehren();
+//  let mieSeite = new Mie("Die Messwerte tabellarisch anzeigen");
+//  mieSeite.ausfuehren();
+  let home_seite = new Homeseite("Heim");
+  home_seite.ausfuehren();
   return 'Brumm, Brummel, Gähn, ...';
 }
 
