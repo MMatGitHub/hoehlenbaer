@@ -1,15 +1,18 @@
-class Homeseite {
+class Home {
   constructor(derDefault) {
     this.derDefault = derDefault;
   }
   
   ausfuehren() {
     jammer(this.derDefault);
-    var img = document.createElement("img");
-    img.src = 'Hoehli.png';
-    img.width = 999;
-    img.height = 777;
-    document.getElementById('spielfeld').appendChild(img);
+    const dasBild = document.createElement("img");
+    dasBild.src = './Hoehli.png';
+    dasBild.width="999";
+    dasBild.height="777";
+    dasBild.alt="Lecker Salat!";
+    document.getElementById('spielfeld').appendChild(dasBild);
+    //document.getElementById('spielfeld').innerHTML="";
+    //document.getElementById('spielfeld').innerHTML=dasBild;
   }
 
 }

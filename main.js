@@ -24,7 +24,7 @@ function raus_aus_der_hoehle() {
 
 //  let mieSeite = new Mie("Die Messwerte tabellarisch anzeigen");
 //  mieSeite.ausfuehren();
-  let home_seite = new Homeseite("Heim");
+  let home_seite = new Home("Heimathöhle");
   home_seite.ausfuehren();
   return 'Brumm, Brummel, Gähn, ...';
 }
@@ -153,7 +153,11 @@ function addStyledButtonsToDiv(myDiv, buttonTextArray, cssClassliste) {
     if (i > 1) {
       styleMich(button, cssClassliste);
     }
-    if (buttonTextArray[i]==="mm") {
+    if (buttonTextArray[i]==="home") {
+      button.onclick = function () {
+        new Home().ausfuehren("test");
+      };
+    }    if (buttonTextArray[i]==="mm") {
       button.onclick = function () {
         new MM().hol("<p>mmmmmmmmmm</p>");
       };
