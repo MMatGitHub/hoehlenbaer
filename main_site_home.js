@@ -8,9 +8,18 @@ ausfuehren() {
     jammer(this.derDefault);
     const dasBild = document.createElement("img");
     dasBild.src='data:image/png;base64,'+this.#privaterString;
-    
+    /* 
+ <picture>
+  <source srcset=dasBild.src media="(max-width: 900px)" alt="Flowers">
+
+dasBild.type="image/png";
+</picture> 
+
+    */
     dasBild.alt="Lecker Salat!";
     document.getElementById('spielfeld').innerHTML="";
+    
+    dasBild.classList.add('mm-img');
     document.getElementById('spielfeld').appendChild(dasBild);
   }
 
