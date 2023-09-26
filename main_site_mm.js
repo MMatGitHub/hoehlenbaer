@@ -3,8 +3,7 @@ class MM {
     this.derDefault = derDefault;
   }
 
-  hol(was) {
-    document.getElementById('spielfeld').innerHTML="";
-    document.getElementById('spielfeld').innerHTML=was;
+  zeigen() {
+    document.getElementById('spielfeld').innerHTML="<p>mmmmmmmmmm</p>";
   }
 }

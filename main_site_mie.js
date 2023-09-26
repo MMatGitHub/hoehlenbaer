@@ -3,7 +3,7 @@ class Mie {
     this.derDefault = derDefault;
   }
   
-  ausfuehren() {
+  zeigen() {
     jammer(this.derDefault);
     json2Table(messwerte_as_json_obj, 'tabellendaten');
   }

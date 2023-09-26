@@ -3,7 +3,7 @@ class Kids {
     this.derDefault = derDefault;
   }
 
-  hol() {
-    return this.derDefault;
+  zeigen() {
+    document.getElementById('spielfeld').innerHTML="<p>kiddies</p>";
   }
 }

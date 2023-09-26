@@ -1,5 +1,7 @@
 .mm-img {
-  min-width: 100%;
-  width: 100%;
+  min-width: 75%;
+  width: 75%;
+  margin: auto;
+  display: block;
   height: auto;
 }

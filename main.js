@@ -159,18 +159,18 @@ function addStyledButtonsToDiv(myDiv, buttonTextArray, cssClassliste) {
       };
     }    if (buttonTextArray[i]==="mm") {
       button.onclick = function () {
-        new MM().hol("<p>mmmmmmmmmm</p>");
+        new MM().zeigen();
       };
     }
     if (buttonTextArray[i]==="kids") {
       button.onclick = function () {
-        new MM().hol("<p>kiddies</p>");
+        new Kids().zeigen();
       };
     }
     if (buttonTextArray[i]==="mie") {
       button.onclick = function () {
         let mieSeite = new Mie("Die Messwerte tabellarisch anzeigen");
-        mieSeite.ausfuehren();
+        mieSeite.zeigen();
       };
     }
     myDiv.appendChild(button);
