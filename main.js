@@ -1,5 +1,6 @@
 function raus_aus_der_hoehle() {
-  addKopfzeile();
+  let eineKopfzeile = new Kopfzeile("Oben steht was.").addKopfzeile();
+   
   addHier(
     'app_author',
     gibMirEinUnformatiertesElement('p', '*Author*: ' + metadaten[0]['author'])
@@ -34,63 +35,6 @@ function addHier(wo, was) {
   test.appendChild(was);
 }
 
-function addKopfzeile() {
-  let test = document.getElementById('kopfzeile');
-  test.appendChild(
-    gibMirEinElementMitTextFormatiert(
-      'h1',
-      'Herzlich willkommen im ',
-      'mm-margin-64'
-    )
-  );
-  test.appendChild(
-    gibMirEinElementMitTextFormatiert(
-      'p',
-      'Höhlenbärparadies',
-      'w3-xlarge w3-jumbo'
-    )
-  );
-  let hoehlenbutton = gibMirEinElementMitTextFormatiert(
-    'button',
-    'hallo',
-    'w3-button w3-black w3-hover-red w3-padding-large w3-large w3-margin-top'
-  );
-  hoehlenbutton.addEventListener('mouseover', () => {
-    hoehlenbutton.innerText = 'Ich bin WACH !!!';
-  });
-  hoehlenbutton.addEventListener('mouseout', () => {
-    hoehlenbutton.innerText = 'Vegetarische Grüße :-)';
-  });
-  test.appendChild(hoehlenbutton);
-}
-
-function gibMirEinUnformatiertesElement(meinTag, meinText) {
-  return gibMirEinElementMitTextFormatiert(meinTag, meinText, '');
-}
-function gibMirEinElementMitTextFormatiert(
-  meinTag,
-  meinText,
-  mein_mm_css_Format
-) {
-  let retVal = document.createElement(meinTag);
-  if ('' !== meinText) {
-    retVal.innerHTML = meinText;
-  }
-
-  if ('' === mein_mm_css_Format) {
-    return retVal;
-  }
-
-  let myStringArray = mein_mm_css_Format.split(' ');
-  for (const s of myStringArray) {
-    retVal.classList.add(s);
-  }
-  return retVal;
-}
-
-function gibMirEinFormatiertesElementOhneText(meinTag, mein_mm_css_Format) {
-  return gibMirEinElementMitTextFormatiert(meinTag, '', mein_mm_css_Format);
-}
 function getAppzeile() {
   let retVal = `<div class="w3-top">
     <div class="w3-bar w3-orange w3-card w3-left-align w3-large">
@@ -120,7 +64,8 @@ function getSmallAppzeile() {
 
 function addStatuszeile(nachricht) {
   let einfuegen = document.getElementById('statuszeile');
-  einfuegen.appendChild(gibMirEinElementMitTextFormatiert('p', nachricht, ''));
+  let eineKopfzeile =new Kopfzeile("Oben steht was.");
+  einfuegen.appendChild(eineKopfzeile.gibMirEinElementMitTextFormatiert('p', nachricht, ''));
 }
 function addAblaufumgebungInfo(nachricht) {
   let retVal = new runtime().toLesbar();
@@ -155,22 +100,21 @@ function addStyledButtonsToDiv(myDiv, buttonTextArray, cssClassliste) {
     }
     if (buttonTextArray[i]==="home") {
       button.onclick = function () {
-        new Home('Heimathöhle again').ausfuehren();
+        new Home('Heimathöhle again').zeigen();
       };
     }    if (buttonTextArray[i]==="mm") {
       button.onclick = function () {
-        new MM().zeigen();
+        new MM('MM selected').zeigen();
       };
     }
     if (buttonTextArray[i]==="kids") {
       button.onclick = function () {
-        new Kids().zeigen();
+        new Kids('kinderen!').zeigen();
       };
     }
     if (buttonTextArray[i]==="mie") {
       button.onclick = function () {
-        let mieSeite = new Mie("Die Messwerte tabellarisch anzeigen");
-        mieSeite.zeigen();
+        let mieSeite = new Mie("Die Messwerte tabellarisch anzeigen").zeigen();
       };
     }
     myDiv.appendChild(button);

@@ -4,6 +4,7 @@ class MM {
   }
 
   zeigen() {
+    jammer(this.derDefault);
     document.getElementById('spielfeld').innerHTML="<p>mmmmmmmmmm</p>";
   }
 }
