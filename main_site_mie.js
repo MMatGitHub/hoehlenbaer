@@ -9,3 +9,4 @@ class Mie {
   }
 
 }
+console.log('main_site_mie.js geladen');

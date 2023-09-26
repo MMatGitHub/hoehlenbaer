@@ -21,19 +21,13 @@ function raus_aus_der_hoehle() {
   document.getElementById('navdemo').innerHTML = getSmallAppzeile();
   addAblaufumgebungInfo();
   document.getElementById('halloDiv').innerText =
-    'Brummte um ' + new Date().toLocaleTimeString() + ' Uhr';
+  'Brummte um ' + new Date().toLocaleTimeString() + ' Uhr';
 
-//  let mieSeite = new Mie("Die Messwerte tabellarisch anzeigen");
-//  mieSeite.ausfuehren();
   let home_seite = new Home("Heimathöhle");
-  home_seite.ausfuehren();
+  home_seite.zeigen();
   return 'Brumm, Brummel, Gähn, ...';
 }
 
-function addHier(wo, was) {
-  let test = document.getElementById(wo);
-  test.appendChild(was);
-}
 
 function getAppzeile() {
   let retVal = `<div class="w3-top">
@@ -65,7 +59,7 @@ function getSmallAppzeile() {
 function addStatuszeile(nachricht) {
   let einfuegen = document.getElementById('statuszeile');
   let eineKopfzeile =new Kopfzeile("Oben steht was.");
-  einfuegen.appendChild(eineKopfzeile.gibMirEinElementMitTextFormatiert('p', nachricht, ''));
+  einfuegen.appendChild(gibMirEinElementMitTextFormatiert('p', nachricht, ''));
 }
 function addAblaufumgebungInfo(nachricht) {
   let retVal = new runtime().toLesbar();
@@ -132,23 +126,6 @@ function myFunction() {
     }
  }
 
-function styleMich(mich, cssClasses) {
-  let retVal = mich;
-  let myStringArray = [];
-  if (cssClasses) {
-    if (cssClasses.includes(' ')) {
-      myStringArray = cssClasses.split(' ');
-    } else {
-      myStringArray[0] = cssClasses;
-    }
-  }
-  if (myStringArray.length > 0) {
-    for (const s of myStringArray) {
-      retVal.classList.add(s);
-    }
-  }
-  return retVal;
-}
 
 function generateAppzeileDynamically() {
   const innerAppzeilenDiv = gibMirEinFormatiertesElementOhneText(

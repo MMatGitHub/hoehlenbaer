@@ -9,3 +9,4 @@ class Kids {
     document.getElementById('spielfeld').innerHTML="<p>kiddies</p>";
   }
 }
+console.log('main_site_kids.js geladen');

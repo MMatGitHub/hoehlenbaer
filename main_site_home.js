@@ -24,3 +24,4 @@ dasBild.type="image/png";
   }
 
 }
+console.log('main_site_home.js geladen');

@@ -8,17 +8,16 @@ class Kopfzeile {
     addKopfzeile();
   }
   
-
   addKopfzeile() {
-    let test = document.getElementById('kopfzeile');
-    test.appendChild(
+    let eineKopfzeile = document.getElementById('kopfzeile');
+    eineKopfzeile.appendChild(
       gibMirEinElementMitTextFormatiert(
         'h1',
         'Herzlich willkommen im ',
         'mm-margin-64'
       )
     );
-    test.appendChild(
+    eineKopfzeile.appendChild(
       gibMirEinElementMitTextFormatiert(
         'p',
         'Höhlenbärparadies',
@@ -36,9 +35,8 @@ class Kopfzeile {
     hoehlenbutton.addEventListener('mouseout', () => {
       hoehlenbutton.innerText = 'Vegetarische Grüße :-)';
     });
-    test.appendChild(hoehlenbutton);
+    eineKopfzeile.appendChild(hoehlenbutton);
   }
-  
-  
 
 }
+console.log('main_kopfzeile.js geladen');
