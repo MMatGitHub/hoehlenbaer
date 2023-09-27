@@ -31,9 +31,19 @@ class Kopfzeile {
     );
     hoehlenbutton.addEventListener('mouseover', () => {
       hoehlenbutton.innerText = 'Ich bin WACH !!!';
+      let dasBild = document.createElement("img");
+      dasBild.src=new Home("Bin big").GROSS_ZEIGEN();
+      document.getElementById('spielfeld').innerHTML="";
+      dasBild.classList.add('mm-img');
+      document.getElementById('spielfeld').appendChild(dasBild);
     });
     hoehlenbutton.addEventListener('mouseout', () => {
       hoehlenbutton.innerText = 'Vegetarische Grüße :-)';
+      let dasBild = document.createElement("img");
+      dasBild.src=new Home("Bin big").GROSS_ZEIGEN();
+      document.getElementById('spielfeld').innerHTML="";
+      dasBild.classList.add('mm-img');
+      document.getElementById('spielfeld').appendChild(dasBild);
     });
     eineKopfzeile.appendChild(hoehlenbutton);
   }

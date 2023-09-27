@@ -6,15 +6,14 @@ class Home {
   }
   zeigen() {
     jammer(this.derDefault);
-    const dasBild = document.createElement("img");
+    let dasBild = document.createElement("img");
     dasBild.src='data:image/png;base64,'+this.#privaterString;
     /* 
- <picture>
-  <source srcset=dasBild.src media="(max-width: 900px)" alt="Flowers">
+        <picture>
+          <source srcset=dasBild.src media="(max-width: 900px)" alt="Flowers">
 
-dasBild.type="image/png";
-</picture> 
-
+        dasBild.type="image/png";
+        </picture> 
     */
     dasBild.alt="Lecker Salat!";
     document.getElementById('spielfeld').innerHTML="";
@@ -22,6 +21,18 @@ dasBild.type="image/png";
     dasBild.classList.add('mm-img');
     document.getElementById('spielfeld').appendChild(dasBild);
   }
+  GROSS_ZEIGEN() {
+    jammer(this.derDefault);
+    const dasBild = document.createElement("img");
+    dasBild.src='https://de.wiktionary.org/wiki/H%C3%B6hlenb%C3%A4r#/media/Datei:Ursus_spelaeus_Sergiodlarosa.jpg';
+    
+    dasBild.alt="BRUuuuuuuMMMM";
+    document.getElementById('spielfeld').innerHTML="";
+    
+    dasBild.classList.add('mm-img');
+    document.getElementById('spielfeld').appendChild(dasBild);
+  }
+  
 
 }
 console.log('main_site_home.js geladen');
