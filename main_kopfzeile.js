@@ -40,7 +40,7 @@ class Kopfzeile {
     hoehlenbutton.addEventListener('mouseout', () => {
       hoehlenbutton.innerText = 'Vegetarische Grüße :-)';
       let dasBild = document.createElement("img");
-      dasBild.src=new Home("Bin big").GROSS_ZEIGEN();
+      dasBild.src=new Home("Bin klein").zeigen();
       document.getElementById('spielfeld').innerHTML="";
       dasBild.classList.add('mm-img');
       document.getElementById('spielfeld').appendChild(dasBild);

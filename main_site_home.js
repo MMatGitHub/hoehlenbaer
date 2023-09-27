@@ -24,7 +24,8 @@ class Home {
   GROSS_ZEIGEN() {
     jammer(this.derDefault);
     const dasBild = document.createElement("img");
-    dasBild.src='https://de.wiktionary.org/wiki/H%C3%B6hlenb%C3%A4r#/media/Datei:Ursus_spelaeus_Sergiodlarosa.jpg';
+    dasBild.src='https://upload.wikimedia.org/wikipedia/commons/d/d3/Ursus_spelaeus_Sergiodlarosa.jpg';
+    dasBild.loading="lazy";
     
     dasBild.alt="BRUuuuuuuMMMM";
     document.getElementById('spielfeld').innerHTML="";
