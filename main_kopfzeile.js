@@ -31,19 +31,21 @@ class Kopfzeile {
     );
     hoehlenbutton.addEventListener('mouseover', () => {
       hoehlenbutton.innerText = 'Ich bin WACH !!!';
-      let dasBild = document.createElement("img");
-      dasBild.src=new Home("Bin big").GROSS_ZEIGEN();
-      document.getElementById('spielfeld').innerHTML="";
-      dasBild.classList.add('mm-img');
-      document.getElementById('spielfeld').appendChild(dasBild);
+//      let dasBild = document.createElement("img");
+//      dasBild.src=new Home("Bin big").GROSS_ZEIGEN();
+//      document.getElementById('spielfeld').innerHTML="";
+//      dasBild.classList.add('mm-img');
+//      document.getElementById('spielfeld').appendChild(dasBild);
+        new Home("Bin big").GROSS_ZEIGEN();
     });
     hoehlenbutton.addEventListener('mouseout', () => {
       hoehlenbutton.innerText = 'Vegetarische Grüße :-)';
-      let dasBild = document.createElement("img");
-      dasBild.src=new Home("Bin klein").zeigen();
-      document.getElementById('spielfeld').innerHTML="";
-      dasBild.classList.add('mm-img');
-      document.getElementById('spielfeld').appendChild(dasBild);
+//      let dasBild = document.createElement("img");
+//      dasBild.src=new Home("Bin klein").zeigen();
+//      document.getElementById('spielfeld').innerHTML="";
+//      dasBild.classList.add('mm-img');
+//      document.getElementById('spielfeld').appendChild(dasBild);
+        new Home("Bin klein").zeigen();
     });
     eineKopfzeile.appendChild(hoehlenbutton);
   }
