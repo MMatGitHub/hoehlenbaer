@@ -114,7 +114,9 @@ function json2Table(json_daten) {
   //jammer("hä:" +DieWerte[DieWerte.length-1].toString());
    
   neue_tabelle.setAttribute('class', 'mm-tabelle');
-  document.getElementById('spielfeld').innerHTML='';
+ // document.getElementById('spielfeld').innerHTML='';
+  new Home("Kein Baer mehr").verstecken();
+
   document.getElementById('spielfeld').appendChild(neue_tabelle);
 }
 function Mittelwertspaltebefuellen(zaehler, nenner){ 

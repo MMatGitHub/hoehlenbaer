@@ -5,8 +5,10 @@ class Kids {
 
   zeigen() {
     jammer(this.derDefault);
-    document.getElementById('spielfeld').innerHTML="<p>kiddies</p>";
-    document.getElementById('spielfeld').innerHTML="<p>kiddies</p>";
+    let kids_p=document.createElement('p');
+    kids_p.innerText="kiddiees";
+    document.getElementById('spielfeld').appendChild(kids_p);
+    new Home("Kein Baer mehr").verstecken();
   }
 }
 console.log('main_site_kids.js geladen');

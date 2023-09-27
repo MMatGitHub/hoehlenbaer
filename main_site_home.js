@@ -1,4 +1,3 @@
-//document.addEventListener('DOMContentLoaded', function() {
   class Home {
     #kleinerBaer='';
     #grosserBaer='';
@@ -14,18 +13,18 @@
       jammer(this.derDefault);
       this.#grosserBaer.style.height = 0;
       this.#kleinerBaer.style.height = 'auto';
-      this.#kleinerBaer.style.visibility = 'visible';
-      this.#grosserBaer.style.visibility = 'hidden';
-    }
+     }
+     verstecken() {
+      jammer(this.derDefault);
+      this.#grosserBaer.style.height = 0;
+      this.#kleinerBaer.style.height = 0;
+     }
 
-    GROSS_ZEIGEN() {
+     GROSS_ZEIGEN() {
       jammer(this.derDefault);
       this.#grosserBaer.style.height = 'auto';
-      this.#grosserBaer.style.visibility = 'visible';
       this.#kleinerBaer.style.height = 0;
-      this.#kleinerBaer.style.visibility = 'hidden';
     }
  
   }
 console.log('main_site_home.js geladen');
-//});
