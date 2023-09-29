@@ -48,31 +48,14 @@
       <div id="debugDiv"></div>
     </footer>  
     <script>
-        const spielfeld_id = ["Hoehle","Newborn","Data(MIE)","M+M"];
-        const Home_id = 0;
-        const Kids_id = 1;
-        const Mie_id = 2;
-        const MM_id = 3; 
+
         function los_gehts(){
           //testing() oder aufwachen();
           //aufwachen();
-          do_initialize();
           testing();
         }
 
-        function do_initialize() {
-          try {
-            eval(addSpielfeldStatus (new Home(spielfeld_id[Home_id])));
-            eval(addSpielfeldStatus (new Kids(spielfeld_id[Kids_id])));
-            eval(addSpielfeldStatus (new Mie(spielfeld_id[Mie_id])));
-            eval(addSpielfeldStatus (new MM(spielfeld_id[MM_id])));
-            jammer(getSpielfeldStatusAsString()+",... found");
-          } catch (e) {
-
-            return 'Error (' + e.message + ') ' + e.stack;
-          }
-          return 'Testing... OK at (' + new Date().toLocaleTimeString() + ' Uhr' + ')';
-        }
+        
      
     </script>
     

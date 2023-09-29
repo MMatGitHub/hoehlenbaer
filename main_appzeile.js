@@ -3,13 +3,22 @@ function generateAppzeileDynamically() {
     'div',
     'w3-bar w3-orange w3-card w3-left-align w3-large'
   );
-  const divWithButtons = addStyledButtonsToDiv(innerAppzeilenDiv, 
-    ['menu', 'home', 'kids', 'mie', 'mm'],
-    'w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white'
+
+  const navDemoWithButtons = addStyledButtonsToDiv(innerAppzeilenDiv, 
+    appzeile_group_labels_overwrite,
+    'w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large'
   );
+  document.getElementById('navdemo').appendChild(navDemoWithButtons);
+  document.getElementById('navdemo').classList.add('w3-top');
+  
+  appzeile_group_labels_overwrite.push('menu');
+  const divWithButtons = addStyledButtonsToDiv(innerAppzeilenDiv, 
+    appzeile_group_labels_overwrite,
+    'w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white'
+    );
   document.getElementById('appzeile').appendChild(divWithButtons);
   document.getElementById('appzeile').classList.add('w3-top');
-  document.getElementById('navdemo').classList.add('w3-top');
+
 }
 
 function addStyledButtonsToDiv(myDiv, buttonTextArray, cssClassliste) {
@@ -18,7 +27,7 @@ function addStyledButtonsToDiv(myDiv, buttonTextArray, cssClassliste) {
   for (let i = 0; i < n; i++) {
     let button = document.createElement('button');
     button.textContent = buttonTextArray[i];
-    if (i === 0) {
+    if (buttonTextArray[i]==='menu') {
       button = styleMich(
         button,
         'w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red'
@@ -28,14 +37,14 @@ function addStyledButtonsToDiv(myDiv, buttonTextArray, cssClassliste) {
         //alert("Button is clicked");
       };
     }
-    if (i === 1) {
+    if (i === 0) {
       button = styleMich(
         button,
         'w3-bar-item w3-button w3-padding-large w3-white'
       );
     }
 
-    if (i > 1) {
+    if (buttonTextArray[i]!=='menu') {
       styleMich(button, cssClassliste);
     }
     if (buttonTextArray[i]==="home") {
@@ -62,3 +71,13 @@ function addStyledButtonsToDiv(myDiv, buttonTextArray, cssClassliste) {
   }
   return myDiv;
 }
+
+function myFunction() {
+    jammer("ToDo Hamburger-Menu anzeigen.");
+    var x = document.getElementById("navdemo");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else { 
+      x.className = x.className.replace(" w3-show", "");
+    }
+ }

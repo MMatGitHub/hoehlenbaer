@@ -11,18 +11,18 @@ class Home {
     }
 
     zeigen() {
-      jammer("Kleiner Baer in der "+this.derDefault);
+      jammer("Kleiner Baer at "+this.derDefault);
       this.#grosserBaer.style.height = 0;
       this.#kleinerBaer.style.height = 'auto';
      }
     verstecken() {
-      jammer("Versteckt in der "+this.derDefault);
+      jammer("Versteckt at "+this.derDefault);
       this.#grosserBaer.style.height = 0;
       this.#kleinerBaer.style.height = 0;
     }
 
     GROSS_ZEIGEN() {
-      jammer("Grosser Baer in der "+this.derDefault);
+      jammer("Grosser Baer at "+this.derDefault);
       this.#grosserBaer.style.height = 'auto';
       this.#kleinerBaer.style.height = 0;
   }
