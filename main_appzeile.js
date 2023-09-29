@@ -43,7 +43,8 @@ function addStyledButtonsToDiv(myDiv, buttonTextArray, cssClassliste) {
       button.onclick = function () {
         wechsleZuSpielfeldStatus(Home_id).zeigen();
       };
-    }    if (buttonTextArray[i]==="mm") {
+    }    
+    if (buttonTextArray[i]==="mm") {
       button.onclick = function () {
         wechsleZuSpielfeldStatus(MM_id).zeigen();
       };

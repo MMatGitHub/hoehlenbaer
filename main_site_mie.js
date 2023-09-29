@@ -2,18 +2,17 @@ class Mie {
   constructor(derDefault) {
     this.derDefault = derDefault;
     
-    document.getElementById('tabellendaten').in(json2Table(messwerte_as_json_obj, 'tabellendaten'));
+    document.getElementById('tabellendaten').appendChild(json2Table(messwerte_as_json_obj, 'tabellendaten'));
 
   }
   
   verstecken() {
-    jammer("HIDE "+this.derDefault);
     document.getElementById('tabellendaten').style.visibility='hidden';
+    document.getElementById('tabellendaten').style.height=0;
   }
   zeigen() {
-    jammer("SHOW "+this.derDefault);
     document.getElementById('tabellendaten').style.visibility='visible';
-
+    document.getElementById('tabellendaten').style.height='auto';
    }
 
 }
