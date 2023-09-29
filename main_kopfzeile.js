@@ -31,12 +31,11 @@ class Kopfzeile {
     );
     hoehlenbutton.addEventListener('mouseover', () => {
       hoehlenbutton.innerText = 'Ich bin WACH !!!';
-
-        new Home("Bin big").GROSS_ZEIGEN();
+      wechsleZuSpielfeldStatus(Home_id).GROSS_ZEIGEN();
     });
     hoehlenbutton.addEventListener('mouseout', () => {
       hoehlenbutton.innerText = 'Vegetarische Grüße :-)';
-        new Home("Bin klein").zeigen();
+      wechsleZuSpielfeldStatus(Home_id).zeigen();
     });
     eineKopfzeile.appendChild(hoehlenbutton);
   }

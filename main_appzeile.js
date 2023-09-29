@@ -41,21 +41,21 @@ function addStyledButtonsToDiv(myDiv, buttonTextArray, cssClassliste) {
     }
     if (buttonTextArray[i]==="home") {
       button.onclick = function () {
-        new Home('Heimathöhle again').zeigen();
+        wechsleZuSpielfeldStatus(Home_id).zeigen();
       };
     }    if (buttonTextArray[i]==="mm") {
       button.onclick = function () {
-        new MM('MM selected').zeigen();
+        wechsleZuSpielfeldStatus(MM_id).zeigen();
       };
     }
     if (buttonTextArray[i]==="kids") {
       button.onclick = function () {
-        new Kids('kinderen!').zeigen();
+        wechsleZuSpielfeldStatus(Kids_id).zeigen();
       };
     }
     if (buttonTextArray[i]==="mie") {
       button.onclick = function () {
-        let mieSeite = new Mie("Die Messwerte tabellarisch anzeigen").zeigen();
+        wechsleZuSpielfeldStatus(Mie_id).zeigen();
       };
     }
     myDiv.appendChild(button);

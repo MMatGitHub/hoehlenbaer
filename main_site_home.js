@@ -11,22 +11,21 @@ class Home {
     }
 
     zeigen() {
-      jammer(this.derDefault);
+      jammer("SHOW "+this.derDefault);
       this.#grosserBaer.style.height = 0;
       this.#kleinerBaer.style.height = 'auto';
      }
-     verstecken() {
-      jammer(this.derDefault);
+    verstecken() {
+      jammer("HIDE "+this.derDefault);
       this.#grosserBaer.style.height = 0;
       this.#kleinerBaer.style.height = 0;
-     }
+    }
 
-     GROSS_ZEIGEN() {
-      jammer(this.derDefault);
-      
+    GROSS_ZEIGEN() {
+      jammer("SHOW BIG "+this.derDefault);
       this.#grosserBaer.style.height = 'auto';
       this.#kleinerBaer.style.height = 0;
-    }
+  }
  
 }
 console.log('main_site_home.js geladen');

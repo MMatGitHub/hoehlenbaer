@@ -1,11 +1,9 @@
-let spielfeld_status = [];
 
 function raus_aus_der_hoehle() {
   let eineKopfzeile = new Kopfzeile("Oben steht was.").addKopfzeile();
   generateAppzeileDynamically();
   generateFooterDynamically();
   //new Home("Heimathöhle").zeigen();
-  getHoehle().zeigen();
   return 'Brumm, Brummel, Gähn, ...';
 }
 
@@ -17,6 +15,7 @@ function getLastSpielfeldStatus(){
   return spielfeld_status[spielfeld_status.length-1];
 }
 
+
 function getSpielfeldStatusAsString(){
   let retVal=[];
   for (let stati of spielfeld_status){
@@ -24,5 +23,13 @@ function getSpielfeldStatusAsString(){
   }
   return retVal;
 }
+
+const wechsleZuSpielfeldStatus = function(spielfeldobjekt_id){
+  for (let stati of spielfeld_status){
+    stati.verstecken();
+  }
+  return spielfeld_status[spielfeldobjekt_id];
+}
+
 
 console.log('main.js geladen');

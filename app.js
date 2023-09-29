@@ -1,3 +1,5 @@
+
+
 function aufwachen() {
   console.log('Bin beim testing ......');
   let testergebnis = do_testing();

@@ -48,38 +48,33 @@
       <div id="debugDiv"></div>
     </footer>  
     <script>
-    function los_gehts(){
-      //testing() oder aufwachen();
-      //aufwachen();
-      
-      function do_initialize() {
-        try {
-          eval(addSpielfeldStatus (new Home("Höhle entdeckt")));
-          eval(addSpielfeldStatus (new Kids("New born")));
-          eval(addSpielfeldStatus (new Mie("MIE found")));
-          eval(addSpielfeldStatus (new MM("MM met")));
-          jammer(getSpielfeldStatusAsString());
-        } catch (e) {
-
-          return 'Error (' + e.message + ') ' + e.stack;
+        const spielfeld_status = [];
+        const spielfeld_id = ["Höhle entdeckt","Newborn","MIE found","MM met"];
+        const Home_id = 0;
+        const Kids_id = 1;
+        const Mie_id = 2;
+        const MM_id = 3; 
+        function los_gehts(){
+          //testing() oder aufwachen();
+          //aufwachen();
+          do_initialize();
+          testing();
         }
-        return 'Testing... OK at (' + new Date().toLocaleTimeString() + ' Uhr' + ')';
-      }
-      function getHoehle(){
-         return spielfeld_status[0];
-      }
-      function getKids(){
-         return spielfeld_status[1];
-      }
-      function getMie(){
-         return spielfeld_status[2];
-      }      
-      function getMM(){
-         return spielfeld_status[3];
-      }
-      jammer(do_initialize());
-      testing();
-    }
+
+        function do_initialize() {
+          try {
+            eval(addSpielfeldStatus (new Home(spielfeld_id[Home_id])));
+            eval(addSpielfeldStatus (new Kids(spielfeld_id[Kids_id])));
+            eval(addSpielfeldStatus (new Mie(spielfeld_id[Mie_id])));
+            eval(addSpielfeldStatus (new MM(spielfeld_id[MM_id])));
+            jammer(getSpielfeldStatusAsString());
+          } catch (e) {
+
+            return 'Error (' + e.message + ') ' + e.stack;
+          }
+          return 'Testing... OK at (' + new Date().toLocaleTimeString() + ' Uhr' + ')';
+        }
+     
     </script>
     
    

@@ -115,9 +115,7 @@ function json2Table(json_daten) {
    
   neue_tabelle.setAttribute('class', 'mm-tabelle');
  // document.getElementById('spielfeld').innerHTML='';
-  new Home("Kein Baer mehr").verstecken();
-
-  document.getElementById('spielfeld').appendChild(neue_tabelle);
+  return neue_tabelle;
 }
 function Mittelwertspaltebefuellen(zaehler, nenner){ 
   let differenz = 0;
