@@ -1,4 +1,3 @@
 # hoehlenbaer
 
-Single Page Webapp Vanilla Javascript?
-Single HTML-Page Vanilla Javascript, of CORS ;-)
+Single Page Webapp? Yes, single HTML-Page Vanilla Javascript, of CORS ;-)
