@@ -9,7 +9,7 @@ function generateAppzeileDynamically() {
     'w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large'
   );
   document.getElementById('navdemo').appendChild(navDemoWithButtons);
-  document.getElementById('navdemo').classList.add('w3-top');
+  styleMich(document.getElementById('navdemo'), 'w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large w3-top');
   
   appzeile_group_labels_overwrite.push('menu');
   const divWithButtons = addStyledButtonsToDiv(innerAppzeilenDiv, 
