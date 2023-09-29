@@ -26,6 +26,7 @@ function do_testing() {
   }
   return 'Testing... OK at (' + new Date().toLocaleTimeString() + ' Uhr' + ')';
 }
+
 console.log('app.js geladen');
 
 

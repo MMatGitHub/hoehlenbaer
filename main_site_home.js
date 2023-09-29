@@ -1,4 +1,4 @@
-  class Home {
+class Home {
     #kleinerBaer='';
     #grosserBaer='';
     constructor(derDefault) {
@@ -7,6 +7,7 @@
       this.#kleinerBaer.classList.add('mm-img'); 
       this.#grosserBaer = document.getElementById('img_grosserBaer');
       this.#grosserBaer.classList.add('mm-img'); 
+      this.verstecken();
     }
 
     zeigen() {
@@ -22,9 +23,10 @@
 
      GROSS_ZEIGEN() {
       jammer(this.derDefault);
+      
       this.#grosserBaer.style.height = 'auto';
       this.#kleinerBaer.style.height = 0;
     }
  
-  }
+}
 console.log('main_site_home.js geladen');

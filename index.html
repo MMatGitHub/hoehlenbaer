@@ -43,6 +43,7 @@
       <div id="app_name"></div>
       <div id="app_version"></div>
       <div id="app_author"></div>
+      <div id="hallozeile"></div>
       <div id="statuszeile"></div>
       <div id="debugDiv"></div>
     </footer>  
@@ -50,6 +51,33 @@
     function los_gehts(){
       //testing() oder aufwachen();
       //aufwachen();
+      
+      function do_initialize() {
+        try {
+          eval(addSpielfeldStatus (new Home("Höhle entdeckt")));
+          eval(addSpielfeldStatus (new Kids("New born")));
+          eval(addSpielfeldStatus (new Mie("MIE found")));
+          eval(addSpielfeldStatus (new MM("MM met")));
+          jammer(getSpielfeldStatusAsString());
+        } catch (e) {
+
+          return 'Error (' + e.message + ') ' + e.stack;
+        }
+        return 'Testing... OK at (' + new Date().toLocaleTimeString() + ' Uhr' + ')';
+      }
+      function getHoehle(){
+         return spielfeld_status[0];
+      }
+      function getKids(){
+         return spielfeld_status[1];
+      }
+      function getMie(){
+         return spielfeld_status[2];
+      }      
+      function getMM(){
+         return spielfeld_status[3];
+      }
+      jammer(do_initialize());
       testing();
     }
     </script>
