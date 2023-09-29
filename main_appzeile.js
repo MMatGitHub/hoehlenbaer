@@ -4,9 +4,13 @@ function generateAppzeileDynamically() {
     'w3-bar w3-orange w3-card w3-left-align w3-large'
   );
 
-  const navDemoWithButtons = addStyledButtonsToDiv(innerAppzeilenDiv, 
+  const innerHamburgerDiv = gibMirEinFormatiertesElementOhneText(
+    'div',
+    'w3-bar w3-orange w3-card w3-left-align w3-large'
+  );
+  const navDemoWithButtons = addStyledButtonsToDiv(innerHamburgerDiv, 
     appzeile_group_labels_overwrite,
-    'w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large'
+    'w3-bar-item w3-button w3-padding-large'
   );
   document.getElementById('navdemo').appendChild(navDemoWithButtons);
   styleMich(document.getElementById('navdemo'), 'w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large w3-top');
