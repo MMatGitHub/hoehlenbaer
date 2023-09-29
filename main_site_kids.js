@@ -5,15 +5,18 @@ class Kids {
     kids_p.innerText="kiddiees";
     kids_p.id="spielfeld_kids"
     document.getElementById('spielfeld').appendChild(kids_p);
+    this.verstecken(); 
   }
 
   verstecken() {
-    document.getElementById('spielfeld_kids').style.visibility='hidden';
-    document.getElementById('spielfeld_kids').style.height='0';
+    let d = document.getElementById('spielfeld_kids');
+    d.style.visibility='hidden';
+    d.style.height='0';
   }
   zeigen() {
-    document.getElementById('spielfeld_kids').style.visibility='visible';
-    document.getElementById('spielfeld_kids').style.height='auto';
+    let d = document.getElementById('spielfeld_kids');
+    d.style.visibility='visible';
+    d.style.height='auto';
    }
 }
 console.log('main_site_kids.js geladen');

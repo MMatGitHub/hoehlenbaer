@@ -12,7 +12,6 @@ function generateAppzeileDynamically() {
   document.getElementById('navdemo').classList.add('w3-top');
 }
 
-
 function addStyledButtonsToDiv(myDiv, buttonTextArray, cssClassliste) {
   const n = buttonTextArray.length;
 

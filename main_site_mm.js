@@ -5,14 +5,17 @@ class MM {
     kids_p.innerText="mmmmmmm";
     kids_p.id="spielfeld_mm"
     document.getElementById('spielfeld').appendChild(kids_p);
- }
+    this.verstecken(); 
+  }
   verstecken() {
-    document.getElementById('spielfeld_mm').style.visibility='hidden';
-    document.getElementById('spielfeld_mm').style.height='0';
+    let d = document.getElementById('spielfeld_mm');
+    d.style.visibility='hidden';
+    d.style.height='0';
   }
   zeigen() {
-    document.getElementById('spielfeld_mm').style.visibility='visible';
-    document.getElementById('spielfeld_mm').style.height='auto';
+    let d = document.getElementById('spielfeld_mm');
+    d.style.visibility='visible';
+    d.style.height='auto';
    }
 }
 console.log('main_site_mm.js geladen');

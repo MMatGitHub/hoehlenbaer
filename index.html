@@ -66,7 +66,7 @@
             eval(addSpielfeldStatus (new Kids(spielfeld_id[Kids_id])));
             eval(addSpielfeldStatus (new Mie(spielfeld_id[Mie_id])));
             eval(addSpielfeldStatus (new MM(spielfeld_id[MM_id])));
-            jammer(getSpielfeldStatusAsString());
+            jammer(getSpielfeldStatusAsString()+",... found");
           } catch (e) {
 
             return 'Error (' + e.message + ') ' + e.stack;
