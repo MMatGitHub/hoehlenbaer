@@ -109,7 +109,7 @@ function json2Table(json_daten) {
   tabellenzeile.appendChild(wAll); 
   tabellenzeile.appendChild(sumVonAnbeginn); 
   //tabellenzeile.appendChild(document.createTextNode("("+DieWerte[DieWerte.length-1].toString()+" -"+DieWerte[0].toString()+")"));
-   //jammer("hä:" +DieWerte.toString());
+  //jammer("hä:" +DieWerte.toString());
   //jammer("hä:" +DieWerte[0].toString());
   //jammer("hä:" +DieWerte[DieWerte.length-1].toString());
    
