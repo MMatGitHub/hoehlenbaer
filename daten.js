@@ -49,6 +49,7 @@ const messwerte_as_json_obj = [
   { id: 'id-87', wert: 8815.5,  zeitpunkt: '11.09.2023', Kommentar: '' },
   { id: 'id-88', wert: 8821.85, zeitpunkt: '19.09.2023', Kommentar: '' },
   { id: 'id-89', wert: 8829.2, zeitpunkt: '28.09.2023', Kommentar: '' },
+  { id: 'id-90', wert: 8841.15, zeitpunkt: '04.10.2023', Kommentar: 'Kids, Pfannkuchen, ...' }
 ];
 
 const beispieldaten = [
