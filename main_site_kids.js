@@ -11,6 +11,12 @@ class Kids {
       'Neues Spiel',
       'w3-button w3-blue w3-hover-red w3-padding-large w3-large w3-margin-top'
       );
+  
+    neuesSpiel.onclick = function () { 
+        jammer("Neues Spiel clicked!");
+        this.zeigen();
+    }
+  
     let neueZeile = document.createElement('p');
     document.getElementById('spielfeld_kids').appendChild(neueZeile);
     document.getElementById('spielfeld_kids').appendChild(neuesSpiel);
@@ -23,10 +29,14 @@ class Kids {
     styleMich(kartenblatt, 'karte');
     ueberschrift.innerText="Überschrift: Karte";
     kartenblatt.appendChild(ueberschrift);
+    let ueber_h1=document.createElement('h1');
+    ueber_h1.innerText="hallo!!!"
+    kartenblatt.appendChild(ueber_h1);
     document.getElementById('spielfeld_kids').appendChild(kartenblatt);
+    kartenblatt.appendChild(ueber_h1);
     this.verstecken();
-  }
-  
+  }  
+
   verstecken() {
     let d = document.getElementById('spielfeld_kids');
     d.style.visibility='hidden';
