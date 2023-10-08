@@ -11,6 +11,8 @@
     <script src="main_footer.js"></script>
     <script src="main_site_home.js"></script>
     <script src="main_site_kids.js"></script>
+    <script src="kids_kartenspiel.js"></script>
+    <script src="kids_kartenspiel_karte.js"></script>
     <script src="main_site_mie.js"></script>
     <script src="main_site_mm.js"></script>
     <script src="runtime.js"></script>
@@ -36,7 +38,9 @@
             <div id="kopfzeile"></div> 
         </header>
         <div id="spielfeld">
-            <img id="img_kleinerBaer" src='https://www.plueschtier-kaufhaus.de/images/6108.jpg'></img>
+            <!--<img id="img_kleinerBaer" src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Bob_der_B%C3%A4r.JPG/800px-Bob_der_B%C3%A4r.JPG'></img>
+            https://www.plueschtier-kaufhaus.de/images/6108.jpg'-->
+            <canvas id="canvas_keinerBaer"></canvas>
             <img id="img_grosserBaer" src='https://upload.wikimedia.org/wikipedia/commons/d/d3/Ursus_spelaeus_Sergiodlarosa.jpg'></img>  
             <div id="tabellendaten"></div>
         </div>
@@ -49,18 +53,11 @@
       <div id="debugDiv"></div>
     </footer>  
     <script>
-
         function los_gehts(){
           //testing() oder aufwachen();
           //aufwachen();
           testing();
         }
-
-        
-     
     </script>
-    
-   
-
 </body>
 </html>

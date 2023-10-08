@@ -3,6 +3,7 @@ const spielfeld_status = [];
 function raus_aus_der_hoehle() {
   let eineKopfzeile = new Kopfzeile("Oben steht was.").addKopfzeile();
   generateAppzeileDynamically();
+  //app.js is generating das Spielfeld
   generateFooterDynamically();
   return 'Brumm, Brummel, Gähn, ...';
 }
