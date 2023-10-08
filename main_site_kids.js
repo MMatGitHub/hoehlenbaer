@@ -19,7 +19,7 @@ class Kids {
         self.zeigen(); // Call 'zeigen' on the captured 'this' context
       }
 
-    document.getElementById('spielfeld').appendChild(new Kartenspiel("Kartenspiel"));
+   // document.getElementById('spielfeld').appendChild(new Kartenspiel("Kartenspiel"));
     this.verstecken(); 
   }
   verstecken() {
