@@ -12,18 +12,16 @@ class Kartenspiel {
     const cardData = {
     imageSrc: 'https://www.w3schools.com/images/w3schools_green.jpg',
     headerText: 'Karte A1',
-    textArray: ['Text 1', 'Text 2', 'Text 3', 'Text 4'],
-    valueArray: ['Geschwindigkeit', 'Alter', 'Höhe', 'kw']
+    textArray: ['Text 1', 'Text 2', 'Text 3', 'Text 4']
   };
   const cardData1 = {
     imageSrc: 'https://www.w3schools.com/images/w3schools_green.jpg',
     headerText: 'Card Header',
-    textArray: ['Card 1', 'Card 2', 'Card 3', 'Card 4'],
-    valueArray: ['Geschwindigkeit', 'Alter', 'Höhe', 'kw']
+    textArray: ['Card 1', 'Card 2', 'Card 3', 'Card 4']
   };
-    const card= new Karte(cardData.imageSrc, cardData.headerText, cardData.textArray, cardData.valueArray);
+    const card= new Karte(cardData.imageSrc, cardData.headerText, cardData.textArray);
     cardContainer.appendChild(card.getCardElement());
-    const card1= new Karte(cardData.imageSrc, cardData.headerText, cardData.textArray, cardData.valueArray);
+    const card1= new Karte(cardData.imageSrc, cardData.headerText, cardData.textArray);
     cardContainer.appendChild(card1.getCardElement());
   }
   verstecken() {
