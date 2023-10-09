@@ -69,4 +69,17 @@ const beispieldaten = [
     company: 'Hü & Hott & Co',
   },
 ];
+
+const ftempwerte_as_json_obj = [
+  { id: 'id-01', wert: 37.6,  zeitpunkt: '07.10.2023', Kommentar: 'ABENDS (20:15)' },
+  { id: 'id-02', wert: 37.8,  zeitpunkt: '07.10.2023', Kommentar: '22:15 Uhr' },
+  { id: 'id-03', wert: 38.5,  zeitpunkt: '08.10.2023', Kommentar: 'NACHTS (01:00)' },
+  { id: 'id-04', wert: 38.1,  zeitpunkt: '08.10.2023', Kommentar: '04:00 Uhr' },
+  { id: 'id-05', wert: 38.5,  zeitpunkt: '08.10.2023', Kommentar: 'MORGENS (06:30)' },
+  { id: 'id-06', wert: 38.1,  zeitpunkt: '08.10.2023', Kommentar: '08:00 Uhr' },
+  { id: 'id-07', wert: 38.5,  zeitpunkt: '08.10.2023', Kommentar: '16:00 Uhr' },
+  { id: 'id-08', wert: 38.7,  zeitpunkt: '08.10.2023', Kommentar: 'NACHMITTAGS (16:45)' },
+  { id: 'id-09', wert: 37.4,  zeitpunkt: '09.10.2023', Kommentar: 'NACHTS (01:50)' },
+  { id: 'id-10', wert: 37.7,  zeitpunkt: '09.10.2023', Kommentar: 'MORGENS (08:15)' }
+]; 
 console.log('daten.js geladen');

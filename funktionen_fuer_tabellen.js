@@ -1,3 +1,42 @@
+function json2TableEinfach(json_daten) {
+  let neue_tabelle = document.createElement('table');
+  let tabellenzeile = neue_tabelle.insertRow();
+  let spalten = [];
+  let mwresult = [];
+  let DieWerte = [];
+  
+  for (let x of Object.keys(json_daten[0])) {
+    if (spalten.indexOf(x) === -1) {
+      //Gibt keys mehrfach
+      spalten.push(x);
+    }
+  }
+
+  for (let ueberschrift of spalten) {
+    let th = document.createElement('th');
+    th.innerHTML = ueberschrift;
+    tabellenzeile.appendChild(th);
+  }
+
+  for (let i = 0; i < json_daten.length; i++) {
+    tabellenzeile = neue_tabelle.insertRow();
+    for (let j = 0; j < spalten.length; j++) {
+      let tabCell = tabellenzeile.insertCell(-1);
+      tabCell.innerHTML = json_daten[i][spalten[j]];
+      //Werte
+      if (j == 1) //"wert") 
+      {
+        DieWerte.push(json_daten[i][spalten[j]]);
+      }
+    }
+  }
+  tabellenzeile = neue_tabelle.insertRow();
+  jammer("MW-Resultarray: "+mwresult.toString());
+  neue_tabelle.setAttribute('class', 'mm-tabelle');
+ // document.getElementById('spielfeld').innerHTML='';
+  return neue_tabelle;
+}
+
 function json2Table(json_daten) {
   let neue_tabelle = document.createElement('table');
   
@@ -17,6 +56,7 @@ function json2Table(json_daten) {
       spalten.push(x);
     }
   }
+
   //zusätzliche Spalten einfügen
   const SchritteZurwertspalteNachLinks = 4;
   const SchritteZurZeitspalteNachLinks = 2;
@@ -43,6 +83,8 @@ function json2Table(json_daten) {
       {
         DieWerte.push(json_daten[i][spalten[j]]);
       }
+
+      
       //Wertedifferenz
       if (spalten[j] === Delta_spaltenname) {
         if (i>0){
@@ -87,11 +129,12 @@ function json2Table(json_daten) {
         tabCell.innerText= mittelwert;
        // jammer("hä:" +aktuellesJahr);
       }
+      
     }
     
   }
   tabellenzeile = neue_tabelle.insertRow();
-  //jammer("MW-Resultarray: "+mwresult.toString());
+  jammer("MW-Resultarray: "+mwresult.toString());
   let w2022=document.createElement("p");
   let w2023 = document.createElement("p");
   let wAll = document.createElement("p");
