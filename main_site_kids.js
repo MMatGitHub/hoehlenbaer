@@ -8,7 +8,7 @@ class Kids {
     kids_p.innerText="kidss";
     kids_p.id="spielfeld_kids"
     document.getElementById('spielfeld').appendChild(kids_div);
-    document.getElementById('spielfeld_kids').appendChild(kids_p);
+    document.getElementById(kids_div.id).appendChild(kids_p);
 
     const kids_kartenspiel_div=document.createElement('div');
     kids_kartenspiel_div.id="spielfeld_kids_kartenspiel"
@@ -19,11 +19,11 @@ class Kids {
       'Neues Spiel',
       'w3-button w3-blue w3-hover-red w3-padding-large w3-large w3-margin-top'
       );
-      neuesSpiel.onclick = function () {
+    document.getElementById(kids_kartenspiel_div.id).appendChild(neuesSpiel);
+    neuesSpiel.onclick = function () {
         jammer("Neues Spiel clicked!");
-        new Kartenspiel("Kartenspiel").erzeugen("spielfeld_kids_kartenspiel");
+        new Kartenspiel("Kartenspiel").erzeugen(kids_kartenspiel_div.id);
       }
-      kids_div.appendChild(neuesSpiel);
     this.verstecken(); 
   }
   verstecken() {

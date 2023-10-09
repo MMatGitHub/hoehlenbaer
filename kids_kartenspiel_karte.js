@@ -1,5 +1,5 @@
 class Karte {
-    constructor(imageSrc, headerText, textArray) {
+    constructor(imageSrc, headerText, textArray, valueArray) {
          
       const cardContainer = document.getElementById('spielfeld_kids');
       
@@ -13,16 +13,29 @@ class Karte {
   
       this.image = document.createElement('img');
       this.image.src = imageSrc;
-  
+
+      let tabelle = document.createElement('TABLE');
+      tabelle.id= "myTable";
+     // document.body.appendChild(tabelle);
       this.textElements = [];
-      for (const text of textArray) {
-        const paragraph = document.createElement('p');
-        paragraph.innerText = text;
-        this.textElements.push(paragraph);
+      for (let text of textArray) {
+  
+      
+        var y = document.createElement("TR");
+        y.setAttribute("id", "myTr");
+        document.getElementById("myTable").appendChild(y);
+      
+        var z = document.createElement("TD");
+        var t = document.createTextNode("cell");
+        z.appendChild(t);
+        document.getElementById("myTr").appendChild(z);
+
+
+        this.textElements.push(tabelle);
       }
   
       this.toggleButton = document.createElement('button');
-      this.toggleButton.innerText = 'Toggle';
+      this.toggleButton.innerText = 'Mogeln';
       this.toggleButton.onclick = () => this.toggle();
   
       // Construct the card structure
