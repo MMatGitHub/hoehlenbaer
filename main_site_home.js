@@ -3,6 +3,7 @@ class Home {
     #grosserBaer='';
     constructor(derDefault) {
       this.derDefault = derDefault;
+      jammer("Erzeuge " + this.derDefault);
       this.#kleinerBaer = document.getElementById('canvas_keinerBaer');
       this.#kleinerBaer.classList.add('mm-img'); 
       this.#grosserBaer = document.getElementById('img_grosserBaer');
@@ -37,7 +38,7 @@ class Home {
   }
 
     zeigen() {
-      jammer("Kleiner Baer at "+this.derDefault);
+      //jammer("Hello from "+this.derDefault);
       //this.zurechtschneiden();
       this.#grosserBaer.style.height = 0;
       this.#kleinerBaer.style.height = 'auto';

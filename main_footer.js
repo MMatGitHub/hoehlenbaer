@@ -11,6 +11,10 @@ function generateFooterDynamically(){
     'app_version',
     gibMirEinUnformatiertesElement('p', '*Version*: ' + metadaten[0]['version'])
   );
+  addHier(
+    'app_hinweis',
+    gibMirEinUnformatiertesElement('p', '*Hinweis*: In der Applikationszeile oben sind auswählbar ' + getSpielfeldStatusAsString())
+  );
   let retVal = new runtime().toLesbar();
   addStatuszeile("*Runtime*: "+retVal);
 }

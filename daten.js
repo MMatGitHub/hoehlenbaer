@@ -80,6 +80,7 @@ const ftempwerte_as_json_obj = [
   { id: 'id-07', wert: 38.5,  zeitpunkt: '08.10.2023', Kommentar: '16:00 Uhr' },
   { id: 'id-08', wert: 38.7,  zeitpunkt: '08.10.2023', Kommentar: 'NACHMITTAGS (16:45)' },
   { id: 'id-09', wert: 37.4,  zeitpunkt: '09.10.2023', Kommentar: 'NACHTS (01:50)' },
-  { id: 'id-10', wert: 37.7,  zeitpunkt: '09.10.2023', Kommentar: 'MORGENS (08:15)' }
+  { id: 'id-10', wert: 37.7,  zeitpunkt: '09.10.2023', Kommentar: 'MORGENS (08:15)' },
+  { id: 'id-11', wert: 36.9,  zeitpunkt: '09.10.2023', Kommentar: 'ABENDS (19:00)' }
 ]; 
 console.log('daten.js geladen');

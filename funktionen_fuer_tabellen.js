@@ -24,16 +24,14 @@ function json2TableEinfach(json_daten) {
       let tabCell = tabellenzeile.insertCell(-1);
       tabCell.innerHTML = json_daten[i][spalten[j]];
       //Werte
-      if (j == 1) //"wert") 
+      if (j == 1) 
       {
         DieWerte.push(json_daten[i][spalten[j]]);
       }
     }
   }
   tabellenzeile = neue_tabelle.insertRow();
-  jammer("MW-Resultarray: "+mwresult.toString());
   neue_tabelle.setAttribute('class', 'mm-tabelle');
- // document.getElementById('spielfeld').innerHTML='';
   return neue_tabelle;
 }
 
@@ -134,7 +132,7 @@ function json2Table(json_daten) {
     
   }
   tabellenzeile = neue_tabelle.insertRow();
-  jammer("MW-Resultarray: "+mwresult.toString());
+  //jammer("MW-Resultarray: "+mwresult.toString());
   let w2022=document.createElement("p");
   let w2023 = document.createElement("p");
   let wAll = document.createElement("p");

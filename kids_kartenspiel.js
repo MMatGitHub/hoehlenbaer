@@ -1,11 +1,14 @@
 class Kartenspiel {
   constructor(derDefault) {
     this.derDefault = derDefault;     
-    this.erzeugen();
   }
     
-  erzeugen(){
-    const cardContainer = document.getElementById('spielfeld_kids')
+  erzeugen(divname){
+    if (divname==="undefined") {;
+      jammer("hää ["+divname+"]===spielfeld_kids_kartenspiel ???");
+      return;
+    }
+    const cardContainer = document.getElementById("spielfeld_kids_kartenspiel");
     const cardData = {
     imageSrc: 'https://www.w3schools.com/images/w3schools_green.jpg',
     headerText: 'Card Header',

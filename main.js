@@ -26,8 +26,13 @@ function getSpielfeldStatusAsString(){
 }
 
 const wechsleZuSpielfeldStatus = function(spielfeldobjekt_id){
+  //let i=0;
   for (let stati of spielfeld_status){
+    //jammer("Hiding Spielfeld" +spielfeld_status.toString());
     //jammer("Hiding Spielfeld ["+spielfeldobjekt_id+"]: "+spielfeld_status[spielfeldobjekt_id].derDefault);
+    //jammer("Hiding Spielfeld ["+i+"]: "+spielfeld_status[spielfeldobjekt_id].derDefault); jammer("Hiding Spielfeld ["+i+"]: "+spielfeld_status[spielfeldobjekt_id].derDefault);
+    //i++;
+    //spielfeld_status[i].verstecken();
     stati.verstecken();
   }
   if (spielfeldobjekt_id===0){
@@ -37,8 +42,8 @@ const wechsleZuSpielfeldStatus = function(spielfeldobjekt_id){
     document.getElementById('kopfzeile').style.visibility='hidden';
     document.getElementById('kopfzeile').style.height='0';
   }
+  jammer("Zeige ["+spielfeldobjekt_id+"]: Hello from "+spielfeld_status[spielfeldobjekt_id].derDefault);
 
-  jammer("Zeige ["+spielfeldobjekt_id+"]: "+spielfeld_status[spielfeldobjekt_id].derDefault);
   return spielfeld_status[spielfeldobjekt_id];
 }
 
