@@ -71,6 +71,11 @@ function addStyledButtonsToDiv(myDiv, buttonTextArray, cssClassliste) {
         wechsleZuSpielfeldStatus(Mie_id).zeigen();
       };
     }
+    if (buttonTextArray[i]==="chat") {
+      button.onclick = function () {
+        wechsleZuSpielfeldStatus(Chat_id).zeigen();
+      };
+    }
     myDiv.appendChild(button);
   }
   return myDiv;

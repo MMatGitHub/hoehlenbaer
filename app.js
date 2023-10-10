@@ -1,11 +1,12 @@
 
 // Globale Variablen
 var DEBUG_JAMMER_OFF = false;
-const spielfeld_id = ['home','kids','mie','mm'];
+const spielfeld_id = ['home','kids','mie','mm','chat'];
 const Home_id = 0;
 const Kids_id = 1;
 const Mie_id = 2;
 const MM_id = 3; 
+const Chat_id = 4; 
 
 const appzeile_group_labels_overwrite = spielfeld_id;
 
@@ -57,6 +58,7 @@ function do_initialize() {
     eval(addSpielfeldStatus (new Kids(spielfeld_id[Kids_id])));
     eval(addSpielfeldStatus (new Mie(spielfeld_id[Mie_id])));
     eval(addSpielfeldStatus (new MM(spielfeld_id[MM_id])));
+    eval(addSpielfeldStatus (new Chat(spielfeld_id[Chat_id])));
     jammer(getSpielfeldStatusAsString()+",... found");
   } catch (e) {
     return 'Error (' + e.message + ') ' + e.stack;
