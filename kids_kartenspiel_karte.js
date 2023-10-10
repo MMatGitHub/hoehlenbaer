@@ -1,5 +1,5 @@
 class Karte {
-    constructor(imageSrc, headerText, textArray) {
+    constructor(imageSrc, headerText, textArray, dimensionenArray) {
          
       const cardContainer = document.getElementById('spielfeld_kids');
       cardContainer.classList.add("Karten"); //wirksam? Notwendig?

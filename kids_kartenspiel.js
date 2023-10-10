@@ -30,7 +30,7 @@ class Kartenspiel {
       const kartensatz_dimensionen =kartensatz_einlesen(kartensatzname+'_dimensionen');
    
       for (let zeile of kartensatz){
-        const card= new Karte(zeile.url, "Der Titel", zeile.werte);
+        const card= new Karte(zeile.url, zeile.id +': '+zeile.name, zeile.werte, kartensatz_dimensionen);
         cardContainer.appendChild(card.getCardElement());
       }
 

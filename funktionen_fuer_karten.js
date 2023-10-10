@@ -26,6 +26,8 @@ function kartensatz_einlesen(arr_name) {
           if (item.hasOwnProperty(key)) {
             const zelle = zeile.insertCell();
             zelle.textContent = item[key];
+            const wertzelle = zeile.insertCell();
+            wertzelle= item.name;
           }
         }
       });
