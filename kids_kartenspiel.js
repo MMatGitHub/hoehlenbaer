@@ -23,8 +23,8 @@ class Kartenspiel {
       };
       const card= new Karte(cardData.imageSrc, cardData.headerText, cardData.textArray);
       cardContainer.appendChild(card.getCardElement());
-      const card1= new Karte(cardData.imageSrc, cardData.headerText, cardData.textArray);
-      cardContainer.appendChild(card1.getCardElement());
+      //const card1= new Karte(cardData.imageSrc, cardData.headerText, cardData.textArray);
+      //cardContainer.appendChild(card1.getCardElement());
       
       const kartensatz =kartensatz_einlesen(kartensatzname);
          
