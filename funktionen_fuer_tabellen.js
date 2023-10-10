@@ -2,7 +2,6 @@ function json2TableEinfach(json_daten) {
   let neue_tabelle = document.createElement('table');
   let tabellenzeile = neue_tabelle.insertRow();
   let spalten = [];
-  let mwresult = [];
   let DieWerte = [];
   
   for (let x of Object.keys(json_daten[0])) {

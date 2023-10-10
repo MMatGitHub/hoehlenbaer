@@ -13,7 +13,7 @@ function generateFooterDynamically(){
   );
   addHier(
     'app_hinweis',
-    gibMirEinUnformatiertesElement('p', '*Hinweis*: In der Applikationszeile oben sind auswählbar ' + getSpielfeldStatusAsString())
+    gibMirEinUnformatiertesElement('p', '*Hinweis*: In der Applikationszeile oben sind auswählbar: ' + getSpielfeldStatusAsString())
   );
   let retVal = new runtime().toLesbar();
   addStatuszeile("*Runtime*: "+retVal);

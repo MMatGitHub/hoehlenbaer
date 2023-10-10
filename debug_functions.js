@@ -9,6 +9,10 @@ function jammer(was) {
   document.getElementById('debugDiv').appendChild(buggy).appendChild(um);
 }
 
+function fehlerjammer(ueber){
+  jammer ('ERROR: '+ ueber);
+}
+
 function riesenjammer(ueber){
  jammer (ueber);
  let retVal='FIRST: ';

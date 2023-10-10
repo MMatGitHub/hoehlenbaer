@@ -48,7 +48,6 @@ function do_initialize() {
     eval(addSpielfeldStatus (new MM(spielfeld_id[MM_id])));
     jammer(getSpielfeldStatusAsString()+",... found");
   } catch (e) {
-
     return 'Error (' + e.message + ') ' + e.stack;
   }
   return 'Testing... OK at (' + new Date().toLocaleTimeString() + ' Uhr' + ')';

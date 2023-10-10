@@ -1,8 +1,8 @@
 class Karte {
-    constructor(imageSrc, headerText, textArray, valueArray) {
+    constructor(imageSrc, headerText, textArray) {
          
       const cardContainer = document.getElementById('spielfeld_kids');
-      
+      cardContainer.classList.add("Karten"); //wirksam? Notwendig?
       this.visible = true;
   
       this.cardElement = document.createElement('article');

@@ -14,16 +14,32 @@ class Kids {
     kids_kartenspiel_div.id="spielfeld_kids_kartenspiel"
     document.getElementById('spielfeld_kids').appendChild(kids_kartenspiel_div);
 
+    let spielkartensatz='kartensatz_futter';
     let neuesSpiel = gibMirEinElementMitTextFormatiert(
       'button',
-      'Neues Spiel',
+      'Neues Spiel (Futter)',
       'w3-button w3-blue w3-hover-red w3-padding-large w3-large w3-margin-top'
       );
-    document.getElementById(kids_kartenspiel_div.id).appendChild(neuesSpiel);
-    neuesSpiel.onclick = function () {
-        jammer("Neues Spiel clicked!");
-        new Kartenspiel("Kartenspiel").erzeugen(kids_kartenspiel_div.id);
+      document.getElementById(kids_kartenspiel_div.id).appendChild(neuesSpiel);
+      neuesSpiel.onclick = function () {
+        jammer("Neues Spiel ("+spielkartensatz+") clicked!");
+        new Kartenspiel("Kartenspiel").erzeugen(kids_kartenspiel_div.id, spielkartensatz);
       }
+      let testSpielfunktion = gibMirEinElementMitTextFormatiert(
+        'button',
+        'Test Spielfunktion',
+        'w3-button w3-blue w3-hover-red w3-padding-large w3-large w3-margin-top'
+        );  
+        testSpielfunktion.onclick = function () {
+          jammer("teste Spielfunktion!");
+          kartensatz_einlesen('asdfsdf');
+          kartensatz_einlesen(spielkartensatz+'_dimensionen');
+          kartensatz_einlesen(spielkartensatz);
+        }
+      document.getElementById(kids_kartenspiel_div.id).appendChild(testSpielfunktion);
+
+  
+
     this.verstecken(); 
   }
   verstecken() {

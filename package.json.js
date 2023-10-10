@@ -1,7 +1,8 @@
 const metadaten = [
   {
-    appname: 'Hoehlenbaerparadies',
-    version: '0.2.1',
+    appname: 'Hoehlenbaer',
+    apptitle: 'Höhlenbär',
+    version: '0.3.0',
     author: 'Duomilia',
   },
 ];

@@ -13,14 +13,14 @@ class Kopfzeile {
     eineKopfzeile.appendChild(
       gibMirEinElementMitTextFormatiert(
         'h1',
-        'Herzlich willkommen im ',
+        'Herzlich willkommen beim ',
         'mm-margin-64'
       )
     );
     eineKopfzeile.appendChild(
       gibMirEinElementMitTextFormatiert(
         'p',
-        'Höhlenbärparadies',
+        metadaten[0]['apptitle'], //Höhlenbär
         'w3-xlarge w3-jumbo'
       )
     );
