@@ -1,4 +1,8 @@
 function jammer(was) {
+  if (DEBUG_JAMMER_OFF === true){
+    console.log(was);
+    return;
+  }
   if (null==was){
     was ="udef";
   }

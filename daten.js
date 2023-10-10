@@ -52,24 +52,6 @@ const messwerte_as_json_obj = [
   { id: 'id-90', wert: 8841.15, zeitpunkt: '04.10.2023', Kommentar: 'Kids, Pfannkuchen, ...' }
 ];
 
-const beispieldaten = [
-  {
-    first_name: 'Toast',
-    last_name: 'Follie',
-    company: 'Ausbeuters',
-  },
-  {
-    first_name: 'Töff',
-    last_name: 'Deller',
-    company: 'Bullshieter',
-  },
-  {
-    first_name: 'Osteria',
-    last_name: 'Italia',
-    company: 'Hü & Hott & Co',
-  },
-];
-
 const ftempwerte_as_json_obj = [
   { id: 'id-01', wert: 37.6,  zeitpunkt: '07.10.2023', Kommentar: 'ABENDS (20:15)' },
   { id: 'id-02', wert: 37.8,  zeitpunkt: '07.10.2023', Kommentar: '22:15 Uhr' },
@@ -81,6 +63,7 @@ const ftempwerte_as_json_obj = [
   { id: 'id-08', wert: 38.7,  zeitpunkt: '08.10.2023', Kommentar: 'NACHMITTAGS (16:45)' },
   { id: 'id-09', wert: 37.4,  zeitpunkt: '09.10.2023', Kommentar: 'NACHTS (01:50)' },
   { id: 'id-10', wert: 37.7,  zeitpunkt: '09.10.2023', Kommentar: 'MORGENS (08:15)' },
-  { id: 'id-11', wert: 36.9,  zeitpunkt: '09.10.2023', Kommentar: 'ABENDS (19:00)' }
+  { id: 'id-11', wert: 36.9,  zeitpunkt: '09.10.2023', Kommentar: 'ABENDS (19:00)' },
+  { id: 'id-12', wert: 37.2,  zeitpunkt: '09.10.2023', Kommentar: 'MORGENS (09:00)' }
 ]; 
 console.log('daten.js geladen');

@@ -1,5 +1,6 @@
 
 // Globale Variablen
+var DEBUG_JAMMER_OFF = false;
 const spielfeld_id = ['home','kids','mie','mm'];
 const Home_id = 0;
 const Kids_id = 1;
@@ -9,11 +10,21 @@ const MM_id = 3;
 const appzeile_group_labels_overwrite = spielfeld_id;
 
 function aufwachen() {
+  DEBUG_JAMMER_OFF = true;
   console.log('Bin am rennen ...');
   do_initialize();
-  let testergebnis = do_testing();
-  console.log(testergebnis);
-  return 'Bin aufgewacht um ' + new Date().toLocaleTimeString() + ' Uhr';
+  raus_aus_der_hoehle();
+  console.log('Bin aufgewacht um ' + new Date().toLocaleTimeString() + ' Uhr');
+  return testergebnis
+}
+
+function do_run() {
+  try {
+    raus_aus_der_hoehle();
+  } catch (e) {
+   return "Aua - Kopf gestossen!" 
+  }
+  return 'running... OK at (' + new Date().toLocaleTimeString() + ' Uhr' + ')';
 }
 
 function testing() {
