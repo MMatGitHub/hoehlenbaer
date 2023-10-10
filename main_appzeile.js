@@ -78,7 +78,7 @@ function addStyledButtonsToDiv(myDiv, buttonTextArray, cssClassliste) {
 
 function myFunction() {
     jammer("ToDo Hamburger-Menu anzeigen.");
-    var x = document.getElementById("navdemo");
+    const x = document.getElementById("navdemo");
     if (x.className.indexOf("w3-show") == -1) {
       x.className += " w3-show";
     } else { 

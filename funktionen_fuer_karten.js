@@ -15,7 +15,7 @@ function kartensatz_einlesen(arr_name) {
     }
     return retVal;
   }
-  function kartensatzToTable(datArray){
+  function feldToTable(datArray){
     jammer("Soll ne Tabelle machen");
     let neue_tabelle="keine Tabelle";
     try{

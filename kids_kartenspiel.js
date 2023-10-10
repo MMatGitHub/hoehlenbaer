@@ -27,10 +27,9 @@ class Kartenspiel {
       cardContainer.appendChild(card1.getCardElement());
       
       const kartensatz =kartensatz_einlesen(kartensatzname);
-      const kartensatz_dimensionen =kartensatz_einlesen(kartensatzname+'_dimensionen');
-   
+         
       for (let zeile of kartensatz){
-        const card= new Karte(zeile.url, zeile.id +': '+zeile.name, zeile.werte, kartensatz_dimensionen);
+        const card= new Karte(zeile.url, zeile.id +': '+zeile.name, zeile.werte, kartensatzname);
         cardContainer.appendChild(card.getCardElement());
       }
 

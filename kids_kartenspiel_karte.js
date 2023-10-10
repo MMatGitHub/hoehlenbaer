@@ -1,5 +1,5 @@
 class Karte {
-    constructor(imageSrc, headerText, textArray, dimensionenArray) {
+    constructor(imageSrc, headerText, werteArray, derKartensatz) {
          
       const cardContainer = document.getElementById('spielfeld_kids');
       cardContainer.classList.add("Karten"); //wirksam? Notwendig?
@@ -14,12 +14,16 @@ class Karte {
       this.image = document.createElement('img');
       this.image.src = imageSrc;
   
-      this.textElements = [];
-      for (let text of textArray) {
+      this.wertElemente = [];
+      let counter=0;
+      const dimensionenArray = kartensatz_einlesen(derKartensatz+'_dimensionen');
+      //const dimensionen= JSON.stringify(dimensionenArray);
+      for (let text of werteArray) {
         let tabelle = document.createElement('p');
         const paragraph = document.createElement('p');
-        paragraph.innerText = text;
-        this.textElements.push(paragraph);
+        paragraph.innerText = dimensionenArray[counter].name +': '+text;
+        this.wertElemente.push(paragraph);
+        counter++;
       }
   
       this.toggleButton = document.createElement('button');
@@ -29,8 +33,8 @@ class Karte {
       // Construct the card structure
       this.cardElement.appendChild(this.header);
       this.cardElement.appendChild(this.image);
-      for (const textElement of this.textElements) {
-        this.cardElement.appendChild(textElement);
+      for (let we of this.wertElemente) {
+        this.cardElement.appendChild(we);
       }
       this.cardElement.appendChild(this.toggleButton);
   
