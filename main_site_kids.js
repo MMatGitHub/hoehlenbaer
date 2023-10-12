@@ -37,9 +37,17 @@ class Kids {
           kartensatz_einlesen(spielkartensatz);
         }
       document.getElementById(kids_kartenspiel_div.id).appendChild(testSpielfunktion);
-   
-      document.getElementById(kids_kartenspiel_div.id).appendChild(TheDom.createButton("Click me", "button", { id: "myButton" }))
-      //TheTree.treeElement (kids_kartenspiel_div.id,'/',button);
+ 
+      TheTree.treeElement (kids_kartenspiel_div.id, '/', TheDom.createButton("Click me", "button", { 
+        class: 'w3-button w3-blue w3-hover-red w3-padding-large w3-large w3-margin-top', 
+        id: "theDomTestButton", 
+        onclick: "jammer('teste theDomTestButton!');"
+      }));
+      TheTree.treeElement (kids_kartenspiel_div.id, '/', TheDom.createButton("Futtineutest", "button", { 
+        class: 'w3-button w3-blue w3-hover-red w3-padding-large w3-large w3-margin-top', 
+        id: "FuttineutestButton", 
+        onclick: "new Kartenspiel('Kartenspiel').erzeugen('spielfeld_kids_kartenspiel', 'kartensatz_futter');"
+      }));
 
     this.verstecken(); 
   }
