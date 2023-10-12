@@ -37,8 +37,9 @@ class Kids {
           kartensatz_einlesen(spielkartensatz);
         }
       document.getElementById(kids_kartenspiel_div.id).appendChild(testSpielfunktion);
-
-  
+   
+      document.getElementById(kids_kartenspiel_div.id).appendChild(TheDom.createButton("Click me", "button", { id: "myButton" }))
+      //TheTree.treeElement (kids_kartenspiel_div.id,'/',button);
 
     this.verstecken(); 
   }
