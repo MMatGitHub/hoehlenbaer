@@ -29,11 +29,22 @@ class Kopfzeile {
       'hallo',
       'w3-button w3-black w3-hover-red w3-padding-large w3-large w3-margin-top'
     );
+    hoehlenbutton.addEventListener('click', () => {
+      hoehlenbutton.innerText = 'Grün ist die Zukunft!';
+      hoehlenbutton.classList.remove('w3-hover-red');
+      hoehlenbutton.classList.add('w3-hover-green');
+      wechsleZuSpielfeldStatus(Home_id).GRUEN_ZEIGEN();
+    });
     hoehlenbutton.addEventListener('mouseover', () => {
       hoehlenbutton.innerText = 'Ich bin WACH !!!';
+      hoehlenbutton.classList.remove('w3-hover-green');
+      hoehlenbutton.classList.add('w3-hover-red');
       wechsleZuSpielfeldStatus(Home_id).GROSS_ZEIGEN();
     });
     hoehlenbutton.addEventListener('mouseout', () => {
+      hoehlenbutton.classList.remove('w3-black');
+      hoehlenbutton.classList.add('w3-indigo');
+      
       hoehlenbutton.innerText = 'Vegetarische Grüße :-)';
       wechsleZuSpielfeldStatus(Home_id).zeigen();
     });

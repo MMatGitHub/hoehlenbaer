@@ -1,6 +1,7 @@
 class Home {
     #kleinerBaer='';
     #grosserBaer='';
+    #gruenerBaer='';
     constructor(derDefault) {
       this.derDefault = derDefault;
       jammer("Erzeuge " + this.derDefault);
@@ -8,6 +9,8 @@ class Home {
       this.#kleinerBaer.classList.add('mm-img'); 
       this.#grosserBaer = document.getElementById('img_grosserBaer');
       this.#grosserBaer.classList.add('mm-img'); 
+      this.#gruenerBaer = document.getElementById('img_gruenerBaer');
+      this.#gruenerBaer.classList.add('mm-img');
       let obenLinks= 150;
       let links=250;
       let neue_breite=500;
@@ -38,21 +41,29 @@ class Home {
   }
 
     zeigen() {
-      //jammer("Hello from "+this.derDefault);
-      //this.zurechtschneiden();
       this.#grosserBaer.style.height = 0;
+      this.#gruenerBaer.style.height = 0;
       this.#kleinerBaer.style.height = 'auto';
-     }
+  }
     verstecken() {
       jammer("Versteckt at "+this.derDefault);
       this.#grosserBaer.style.height = 0;
       this.#kleinerBaer.style.height = 0;
+      this.#gruenerBaer.style.height = 0;
     }
 
     GROSS_ZEIGEN() {
       jammer("Grosser Baer at "+this.derDefault);
       this.#grosserBaer.style.height = 'auto';
       this.#kleinerBaer.style.height = 0;
+      this.#gruenerBaer.style.height = 0;
+    }
+    GRUEN_ZEIGEN(){
+      jammer("Gruener Baer at "+this.derDefault);
+      this.#gruenerBaer.style.height = 'auto';
+      this.#grosserBaer.style.height = 0;
+      this.#kleinerBaer.style.height = 0;
+
     }
   
 }
