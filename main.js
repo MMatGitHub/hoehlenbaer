@@ -16,7 +16,6 @@ function getLastSpielfeldStatus(){
   return spielfeld_status[spielfeld_status.length-1];
 }
 
-
 function getSpielfeldStatusAsString(){
   let retVal=[];
   for (let stati of spielfeld_status){

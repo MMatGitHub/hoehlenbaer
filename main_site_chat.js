@@ -20,25 +20,27 @@ class Chat {
       
       let self = this;
 
-      let testChatfunktion = gibMirEinElementMitTextFormatiert(
+     
+      let chat_connect_send = gibMirEinElementMitTextFormatiert(
         'button',
-        'Test Chatfunktion',
+        'Chatfunktion connect send',
+        'w3-button w3-blue w3-hover-red w3-padding-large w3-large w3-margin-top'
+      );
+      
+      let chat_connect_receive = gibMirEinElementMitTextFormatiert(
+        'button',
+        'Chatfunktion receive',
         'w3-button w3-blue w3-hover-red w3-padding-large w3-large w3-margin-top'
         );  
-        testChatfunktion.onclick = function () {
-          jammer("teste Chatfunktion!");
+        chat_connect_receive.onclick = function () {
+          jammer("Chatfunktion receive");
+          window.location.href = "receive.html";
           self.chatten("hello world");
         }
-        document.getElementById('spielfeld_chat').appendChild(testChatfunktion);
-
-        let testIDfunktion = gibMirEinElementMitTextFormatiert(
-          'button',
-          'Test IDfunktion',
-          'w3-button w3-blue w3-hover-red w3-padding-large w3-large w3-margin-top'
-          );
+        document.getElementById('spielfeld_chat').appendChild(chat_connect_receive);
         
-        testIDfunktion.onclick = function () {
-          jammer("teste IDfunktion!");
+        chat_connect_send.onclick = function () {
+          jammer("Chatfunktion connect");
           const userInput = prompt("Mit wem willst Du chatten? ID muss woanders ausgehandelt worden sein :-)");
             if (userInput !== null) {
               jammer("You entered:", userInput);
@@ -50,7 +52,7 @@ class Chat {
             }
         }
         
-        document.getElementById('spielfeld_chat').appendChild(testIDfunktion);
+        document.getElementById('spielfeld_chat').appendChild(chat_connect_send);
 
 
 
@@ -86,7 +88,6 @@ class Chat {
     });
 
   }
-
   verstecken() {
     jammer("Versteckt at "+this.derDefault);
     let d = document.getElementById('spielfeld_chat');

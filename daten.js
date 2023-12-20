@@ -60,6 +60,10 @@ const messwerte_as_json_obj = [
   {  id: 'id-99', wert: 8902.4, zeitpunkt: '13.11.2023', Kommentar: '' },
   {  id: 'id-100', wert: 8907.2, zeitpunkt: '16.11.2023', Kommentar: '' },
   {  id: 'id-101', wert: 8925.8, zeitpunkt: '24.11.2023', Kommentar: 'Ende 1. Woche mit Kids' },
+  {  id: 'id-102', wert: 8965.9, zeitpunkt: '05.12.2023', Kommentar: '2. Woche mit Kids beendet' },
+  {  id: 'id-103', wert: 8967.05, zeitpunkt: '06.12.2023', Kommentar: 'Grau bewölkt, Winter' },
+  {  id: 'id-104', wert: 8972.0, zeitpunkt: '08.12.2023', Kommentar: 'Winter' },
+  {  id: 'id-105', wert: 8981.25, zeitpunkt: '11.12.2023', Kommentar: 'Winter' },
 ];
 
 const ftempwerte_as_json_obj = [

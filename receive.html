@@ -36,7 +36,8 @@
             </tr>
         </table>
 
-        <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+        <script src="peerjs.js"></script>
+        <!--<script src="https://unpkg.com/peerjs@1.5.1/dist/peerjs.min.js"></script>-->
         <script type="text/javascript">
             (function () {
 
@@ -69,8 +70,8 @@
                     //debug: 2 Prints errors and warnings. 
                     //debug: 3 Alles. 
  
-                    peer = new Peer("123456789qweruzoqiwuzreoiuwzriuqzwrihwrekjqwerlkjhqlekrhqlkerhlqkhrelherlqhrlkqjherlkjqherljkhqrlkjhqlrjkhqlkrhqljkerhlqkjhrlqjhrljkrqbnrQQQmnbqerlkqlerjkhbmbnrqwerqkejrhglkqehbrwerqmbrewerqjkehrlqkjebrwefqbjreli28z4p1o4zh12jb4ku2zr48123z41m23b4j234blu234z", {
-                        debug: 1
+                    peer = new Peer("DiesIstDerPeerVomNikolausDerRuprechtKnecht", {
+                        debug: 3
                     });
                     
                     peer.on('open', function (id) {
