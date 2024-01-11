@@ -64,6 +64,9 @@ const messwerte_as_json_obj = [
   {  id: 'id-103', wert: 8967.05, zeitpunkt: '06.12.2023', Kommentar: 'Grau bewölkt, Winter' },
   {  id: 'id-104', wert: 8972.0, zeitpunkt: '08.12.2023', Kommentar: 'Winter' },
   {  id: 'id-105', wert: 8981.25, zeitpunkt: '11.12.2023', Kommentar: 'Winter' },
+  {  id: 'id-106', wert: 9032.85, zeitpunkt: '27.12.2023', Kommentar: 'Urlaubbeginn' },
+  {  id: 'id-107', wert: 9056.2, zeitpunkt: '07.01.2024', Kommentar: 'Urlaubende' },
+  {  id: 'id-108', wert: 9061.35, zeitpunkt: '11.01.2024', Kommentar: 'Surprise: Winter' },
 ];
 
 const ftempwerte_as_json_obj = [
