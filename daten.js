@@ -67,6 +67,7 @@ const messwerte_as_json_obj = [
   {  id: 'id-106', wert: 9032.85, zeitpunkt: '27.12.2023', Kommentar: 'Urlaubbeginn' },
   {  id: 'id-107', wert: 9056.2, zeitpunkt: '07.01.2024', Kommentar: 'Urlaubende' },
   {  id: 'id-108', wert: 9061.35, zeitpunkt: '11.01.2024', Kommentar: 'Surprise: Winter' },
+  {  id: 'id-108', wert: 9065.9, zeitpunkt: '14.01.2024', Kommentar: '2. Mammsiweek' },
 ];
 
 const ftempwerte_as_json_obj = [
