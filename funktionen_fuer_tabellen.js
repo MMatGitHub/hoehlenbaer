@@ -45,6 +45,7 @@ function json2Table(json_daten) {
   let mwresult = [];
   let mw2022result = [];
   let mw2023result = [];
+  let mw2024result = [];
   let DieWerte = [];
   
   for (let x of Object.keys(json_daten[0])) {
@@ -119,8 +120,12 @@ function json2Table(json_daten) {
         );
         if (aktuellesJahr.includes("2022")){
           mw2022result.push(mittelwert);
-        }else{
+        }
+        if (aktuellesJahr.includes("2023")){
           mw2023result.push(mittelwert);
+        }
+        if (aktuellesJahr.includes("2024")){
+          mw2024result.push(mittelwert);
         }
         mwresult.push(mittelwert);
         tabCell.innerText= mittelwert;
@@ -134,10 +139,12 @@ function json2Table(json_daten) {
   //jammer("MW-Resultarray: "+mwresult.toString());
   let w2022=document.createElement("p");
   let w2023 = document.createElement("p");
+  let w2024 = document.createElement("p");
   let wAll = document.createElement("p");
   let sumVonAnbeginn = document.createElement("p");
   w2022.innerHTML="MW (2022): " +calculateMean(mw2022result);
   w2023.innerHTML="MW (2023): " +calculateMean(mw2023result);
+  w2023.innerHTML="MW (2024): " +calculateMean(mw2024result);
   wAll.innerHTML="MW (ges.): " +calculateMean(mwresult);
   let ersterWert = Number(DieWerte[0]);
   let letzerWert = Number(DieWerte[DieWerte.length-1]);
@@ -146,6 +153,7 @@ function json2Table(json_daten) {
   sumVonAnbeginn.innerHTML="Gesamt: "+(dieSumme);
   tabellenzeile.appendChild(w2022); 
   tabellenzeile.appendChild(w2023); 
+  tabellenzeile.appendChild(w2024); 
   tabellenzeile.appendChild(wAll); 
   tabellenzeile.appendChild(sumVonAnbeginn); 
   //tabellenzeile.appendChild(document.createTextNode("("+DieWerte[DieWerte.length-1].toString()+" -"+DieWerte[0].toString()+")"));
