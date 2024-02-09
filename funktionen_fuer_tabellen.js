@@ -144,7 +144,7 @@ function json2Table(json_daten) {
   let sumVonAnbeginn = document.createElement("p");
   w2022.innerHTML="MW (2022): " +calculateMean(mw2022result);
   w2023.innerHTML="MW (2023): " +calculateMean(mw2023result);
-  w2023.innerHTML="MW (2024): " +calculateMean(mw2024result);
+  w2024.innerHTML="MW (2024): " +calculateMean(mw2024result);
   wAll.innerHTML="MW (ges.): " +calculateMean(mwresult);
   let ersterWert = Number(DieWerte[0]);
   let letzerWert = Number(DieWerte[DieWerte.length-1]);
