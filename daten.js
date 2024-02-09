@@ -1,3 +1,19 @@
+const ftempwerte_as_json_obj = [
+  { id: 'id-01', wert: 37.6,  zeitpunkt: '07.10.2023', Kommentar: 'ABENDS (20:15)' },
+  { id: 'id-02', wert: 37.8,  zeitpunkt: '07.10.2023', Kommentar: '22:15 Uhr' },
+  { id: 'id-03', wert: 38.5,  zeitpunkt: '08.10.2023', Kommentar: 'NACHTS (01:00)' },
+  { id: 'id-04', wert: 38.1,  zeitpunkt: '08.10.2023', Kommentar: '04:00 Uhr' },
+  { id: 'id-05', wert: 38.5,  zeitpunkt: '08.10.2023', Kommentar: 'MORGENS (06:30)' },
+  { id: 'id-06', wert: 38.1,  zeitpunkt: '08.10.2023', Kommentar: '08:00 Uhr' },
+  { id: 'id-07', wert: 38.5,  zeitpunkt: '08.10.2023', Kommentar: '16:00 Uhr' },
+  { id: 'id-08', wert: 38.7,  zeitpunkt: '08.10.2023', Kommentar: 'NACHMITTAGS (16:45)' },
+  { id: 'id-09', wert: 37.4,  zeitpunkt: '09.10.2023', Kommentar: 'NACHTS (01:50)' },
+  { id: 'id-10', wert: 37.7,  zeitpunkt: '09.10.2023', Kommentar: 'MORGENS (08:15)' },
+  { id: 'id-11', wert: 36.9,  zeitpunkt: '09.10.2023', Kommentar: 'ABENDS (19:00)' },
+  { id: 'id-12', wert: 37.2,  zeitpunkt: '10.10.2023', Kommentar: 'MORGENS (09:00)' },
+  { id: 'id-13', wert: 36.5,  zeitpunkt: '10.10.2023', Kommentar: 'ABENDS (20:00)' },
+];
+
 const messwerte_as_json_obj = [
   {  id: 'id-40', wert: 7797.2,  zeitpunkt: '06.01.2022', Kommentar: '' },
   {  id: 'id-41', wert: 7867.0,  zeitpunkt: '30.01.2022', Kommentar: '' },
@@ -67,21 +83,13 @@ const messwerte_as_json_obj = [
   {  id: 'id-106', wert: 9032.85, zeitpunkt: '27.12.2023', Kommentar: 'Urlaubbeginn' },
   {  id: 'id-107', wert: 9056.2, zeitpunkt: '07.01.2024', Kommentar: 'Urlaubende' },
   {  id: 'id-108', wert: 9061.35, zeitpunkt: '11.01.2024', Kommentar: 'Surprise: Winter' },
+  {  id: 'id-109', wert: 9065.9, zeitpunkt: '14.01.2024', Kommentar: '' },
+  {  id: 'id-110', wert: 9078.3, zeitpunkt: '22.01.2024', Kommentar: '' },
+  {  id: 'id-111', wert: 9090.25, zeitpunkt: '26.01.2024', Kommentar: 'Ende 2. Woche mit Kids' },
+  {  id: 'id-112', wert: 9107.5, zeitpunkt: '02.02.2024', Kommentar: '' },
+  {  id: 'id-113', wert: 9113.5, zeitpunkt: '05.02.2024', Kommentar: 'Allein: 1. Woche starting...' },
+  {  id: 'id-114', wert: 9115.6, zeitpunkt: '07.02.2024', Kommentar: '' },
+  {  id: 'id-115', wert: 9118.85, zeitpunkt: '09.02.2024', Kommentar: 'Allein: 1 WE' },
 ];
 
-const ftempwerte_as_json_obj = [
-  { id: 'id-01', wert: 37.6,  zeitpunkt: '07.10.2023', Kommentar: 'ABENDS (20:15)' },
-  { id: 'id-02', wert: 37.8,  zeitpunkt: '07.10.2023', Kommentar: '22:15 Uhr' },
-  { id: 'id-03', wert: 38.5,  zeitpunkt: '08.10.2023', Kommentar: 'NACHTS (01:00)' },
-  { id: 'id-04', wert: 38.1,  zeitpunkt: '08.10.2023', Kommentar: '04:00 Uhr' },
-  { id: 'id-05', wert: 38.5,  zeitpunkt: '08.10.2023', Kommentar: 'MORGENS (06:30)' },
-  { id: 'id-06', wert: 38.1,  zeitpunkt: '08.10.2023', Kommentar: '08:00 Uhr' },
-  { id: 'id-07', wert: 38.5,  zeitpunkt: '08.10.2023', Kommentar: '16:00 Uhr' },
-  { id: 'id-08', wert: 38.7,  zeitpunkt: '08.10.2023', Kommentar: 'NACHMITTAGS (16:45)' },
-  { id: 'id-09', wert: 37.4,  zeitpunkt: '09.10.2023', Kommentar: 'NACHTS (01:50)' },
-  { id: 'id-10', wert: 37.7,  zeitpunkt: '09.10.2023', Kommentar: 'MORGENS (08:15)' },
-  { id: 'id-11', wert: 36.9,  zeitpunkt: '09.10.2023', Kommentar: 'ABENDS (19:00)' },
-  { id: 'id-12', wert: 37.2,  zeitpunkt: '10.10.2023', Kommentar: 'MORGENS (09:00)' },
-  { id: 'id-13', wert: 36.5,  zeitpunkt: '10.10.2023', Kommentar: 'ABENDS (20:00)' },
-]; 
 console.log('daten.js geladen');
