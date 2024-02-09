@@ -83,18 +83,13 @@ const messwerte_as_json_obj = [
   {  id: 'id-106', wert: 9032.85, zeitpunkt: '27.12.2023', Kommentar: 'Urlaubbeginn' },
   {  id: 'id-107', wert: 9056.2, zeitpunkt: '07.01.2024', Kommentar: 'Urlaubende' },
   {  id: 'id-108', wert: 9061.35, zeitpunkt: '11.01.2024', Kommentar: 'Surprise: Winter' },
-<<<<<<< HEAD
-  {  id: 'id-109', wert: 9065.9, zeitpunkt: '14.01.2024', Kommentar: '' },
-  {  id: 'id-110', wert: 9078.3, zeitpunkt: '22.01.2024', Kommentar: '' },
+  {  id: 'id-109', wert: 9065.9, zeitpunkt: '14.01.2024', Kommentar: '2. Mammsiweek' },
+  {  id: 'id-110', wert: 9078.3, zeitpunkt: '22.01.2024', Kommentar: 'End of 2. Mammsiweek' },
   {  id: 'id-111', wert: 9090.25, zeitpunkt: '26.01.2024', Kommentar: 'Ende 2. Woche mit Kids' },
   {  id: 'id-112', wert: 9107.5, zeitpunkt: '02.02.2024', Kommentar: '' },
   {  id: 'id-113', wert: 9113.5, zeitpunkt: '05.02.2024', Kommentar: 'Allein: 1. Woche starting...' },
   {  id: 'id-114', wert: 9115.6, zeitpunkt: '07.02.2024', Kommentar: '' },
   {  id: 'id-115', wert: 9118.85, zeitpunkt: '09.02.2024', Kommentar: 'Allein: 1 WE' },
-=======
-  {  id: 'id-109', wert: 9065.9, zeitpunkt: '14.01.2024', Kommentar: '2. Mammsiweek' },
-  {  id: 'id-110', wert: 9078.3, zeitpunkt: '22.01.2024', Kommentar: 'End of 2. Mammsiweek' },
->>>>>>> e44a63a150d9b9429e93eba66aeda05907fff7a7
 ];
 
 console.log('daten.js geladen');
