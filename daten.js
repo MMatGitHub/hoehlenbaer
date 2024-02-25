@@ -104,6 +104,3 @@ const messwerte_as_json_obj = [
 ];
 
 console.log('daten.js geladen');
-];
-
-console.log('daten.js geladen');
