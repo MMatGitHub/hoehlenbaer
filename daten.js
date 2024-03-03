@@ -101,6 +101,7 @@ const messwerte_as_json_obj = [
   {  id: 'id-118', wert: 9129.25, zeitpunkt: '16.02.2024', Kommentar: 'Three: 2 Woche' },
   {  id: 'id-119', wert: 9131.0, zeitpunkt: '18.02.2024', Kommentar: 'Three: 1 Woche beginnt' },
   {  id: 'id-120', wert: 9143.8, zeitpunkt: '25.02.2024', Kommentar: 'Three: 2 Woche beginnt' },
+  {  id: 'id-123', wert: 9143.8, zeitpunkt: '02.03.2024', Kommentar: 'Three: Letztes WE' },	
 ];
 
 console.log('daten.js geladen');
