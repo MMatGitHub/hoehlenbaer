@@ -9,7 +9,7 @@ generiere_ssh_key() {
 }
 
 verwende_ssh_key() {
- #Nicht kopierbar aus nano oder terminal, daher als html
+ #Echt Nicht kopierbar aus nano oder terminal, daher als html
  cp ~/.ssh/id_rsa.pub /workspace/FrontendStatic/export.html
  cd /workspace/FrontendStatic/hoehlenbaer
  git config core.sshCommand 'ssh -i ~/.ssh/id_rsa' --replace-all
