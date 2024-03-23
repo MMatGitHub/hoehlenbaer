@@ -103,6 +103,15 @@ const messwerte_as_json_obj = [
   {  id: 'id-120', wert: 9143.8, zeitpunkt: '25.02.2024', Kommentar: 'Three: 2 Woche beginnt' },
   {  id: 'id-121', wert: 9157.5, zeitpunkt: '01.03.2024', Kommentar: 'Three: Letztes WE Sa' },	
   {  id: 'id-122', wert: 9159.7, zeitpunkt: '02.03.2024', Kommentar: 'Three: Letztes WE Croissant' },	
+  {  id: 'id-123', wert: 9167.8, zeitpunkt: '09.03.2024', Kommentar: 'One: 14:00' },	
+  {  id: 'id-124', wert: 9168.0, zeitpunkt: '10.03.2024', Kommentar: 'One: 11:00' },	
+  {  id: 'id-125', wert: 9168.4, zeitpunkt: '11.03.2024', Kommentar: 'Three: 08:00' },	
+  {  id: 'id-126', wert: 9169.7, zeitpunkt: '12.03.2024', Kommentar: 'Three: 19:00' },	
+  {  id: 'id-127', wert: 9170.2, zeitpunkt: '13.03.2024', Kommentar: 'Three: 08:00' },	
+  {  id: 'id-128', wert: 9171.2, zeitpunkt: '14.03.2024', Kommentar: 'Three: 11:00' },	
+  {  id: 'id-128', wert: 9170.5, zeitpunkt: '14.03.2024', Kommentar: 'Three: 20:00' },	
+  {  id: 'id-129', wert: 9173.85, zeitpunkt: '18.03.2024', Kommentar: 'Three: Fasten' },	
+  {  id: 'id-130', wert: 9177.6, zeitpunkt: '22.03.2024', Kommentar: 'Three: 1. WE' },	
 ];
 
 console.log('daten.js geladen');
