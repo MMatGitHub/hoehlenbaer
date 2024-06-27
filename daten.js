@@ -112,6 +112,24 @@ const messwerte_as_json_obj = [
   {  id: 'id-128', wert: 9170.5, zeitpunkt: '14.03.2024', Kommentar: 'Three: 20:00' },	
   {  id: 'id-129', wert: 9173.85, zeitpunkt: '18.03.2024', Kommentar: 'Three: Fasten' },	
   {  id: 'id-130', wert: 9177.6, zeitpunkt: '22.03.2024', Kommentar: 'Three: 1. WE' },	
-];
+  {  id: 'id-131', wert: 9185.0, zeitpunkt: '28.03.2024', Kommentar: 'Ab in den UrlaubMS' },
+  {  id: 'id-132', wert: 9181.4, zeitpunkt: '07.04.2024', Kommentar: 'Wieder da' },
+  {  id: 'id-133', wert: 9184.3, zeitpunkt: '11.04.2024', Kommentar: '' },
+  {  id: 'id-134', wert: 9182.2, zeitpunkt: '12.04.2024', Kommentar: '' },
+  {  id: 'id-135', wert: 9182.15, zeitpunkt: '13.04.2024', Kommentar: '' },
+  {  id: 'id-136', wert: 9182.3, zeitpunkt: '15.04.2024', Kommentar: '' },
+  {  id: 'id-137', wert: 9183.2, zeitpunkt: '16.04.2024', Kommentar: '' },
+  {  id: 'id-138', wert: 9182.2, zeitpunkt: '17.04.2024', Kommentar: '' },
+  {  id: 'id-139', wert: 9184.3, zeitpunkt: '18.04.2024', Kommentar: '' },
+  {  id: 'id-141', wert: 9185.5, zeitpunkt: '20.04.2024', Kommentar: '' },
+  {  id: 'id-142', wert: 9185.9, zeitpunkt: '22.04.2024', Kommentar: '' },
+  {  id: 'id-143', wert: 9190.8, zeitpunkt: '26.04.2024', Kommentar: '' },
+  {  id: 'id-144', wert: 9191.5, zeitpunkt: '27.04.2024', Kommentar: '' },
+  {  id: 'id-145', wert: 9194.5, zeitpunkt: '30.04.2024', Kommentar: '' },
+  {  id: 'id-146', wert: 9194.05, zeitpunkt: '01.05.2024', Kommentar: '' },
+  {  id: 'id-147', wert: 9195.65, zeitpunkt: '02.05.2024', Kommentar: '' },
+  {  id: 'id-148', wert: 9198.1, zeitpunkt: '03.05.2024', Kommentar: '' },
+  {  id: 'id-149', wert: 9198.7, zeitpunkt: '04.05.2024', Kommentar: '' },
+  {  id: 'id-150', wert: 9200.6, zeitpunkt: '05.05.2024', Kommentar: '' },];
 
 console.log('daten.js geladen');
