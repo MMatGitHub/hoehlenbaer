@@ -46,9 +46,11 @@ function json2Table(json_daten) {
   let mw2022result = [];
   let mw2023result = [];
   let mw2024result = [];
+  let mw2025result = [];
   let jsumme2022 = 0;
   let jsumme2023 = 0;
   let jsumme2024 = 0;
+  let jsumme2025 = 0;
   let DieWerte = [];
   
   for (let x of Object.keys(json_daten[0])) {
@@ -142,6 +144,12 @@ function json2Table(json_daten) {
             tabCell.innerText =jsumme2024
           }
         }
+        if (aktuellesJahr.includes("2025")){
+          if (!isNaN(jsumme)) {
+            jsumme2025 = jsumme2025+jsumme;
+            tabCell.innerText =jsumme2025
+          }
+        }
       }
 
       //Mittelwert
@@ -160,6 +168,9 @@ function json2Table(json_daten) {
         if (aktuellesJahr.includes("2024")){
           mw2024result.push(mittelwert);
         }
+        if (aktuellesJahr.includes("2025")){
+          mw2025result.push(mittelwert);
+        }
         mwresult.push(mittelwert);
         tabCell.innerText= mittelwert;
        // jammer("hä:" +aktuellesJahr);
@@ -173,12 +184,14 @@ function json2Table(json_daten) {
   let w2022=document.createElement("p");
   let w2023 = document.createElement("p");
   let w2024 = document.createElement("p");
+  let w2025 = document.createElement("p");
   let wAll = document.createElement("p");
   let sumVonAnbeginn = document.createElement("p");
   w2022.innerHTML="MW (2022): " +calculateMean(mw2022result)+ ", SUM (2022): " +jsumme2022;
   //jammer("hä:"  +calculateSum(mw2022result));
   w2023.innerHTML="MW (2023): " +calculateMean(mw2023result)+ ", SUM (2023): " +jsumme2023;
   w2024.innerHTML="MW (2024): " +calculateMean(mw2024result)+ ", SUM (2024): " +jsumme2024;
+  w2025.innerHTML="MW (2025): " +calculateMean(mw2025result)+ ", SUM (2025): " +jsumme2025;
   wAll.innerHTML="MW (ges.): " +calculateMean(mwresult);
   let ersterWert = Number(DieWerte[0]);
   if (ersterWert<1){let ersterWert = Number(DieWerte[1])};
@@ -186,10 +199,11 @@ function json2Table(json_daten) {
   let letzerWert = Number(DieWerte[DieWerte.length-1]);
   let dieSumme = Number(letzerWert-ersterWert);
   dieSumme = dieSumme.toFixed(2);
-  sumVonAnbeginn.innerHTML="Gesamt: "+(dieSumme) + ", abgerunde ges. für (2022-2024): "+(Number(jsumme2022)+Number(jsumme2023)+Number(jsumme2024));
+  sumVonAnbeginn.innerHTML="Gesamt: "+(dieSumme) + ", abgerunde ges. für (2022-2025): "+(Number(jsumme2022)+Number(jsumme2023)+Number(jsumme2024)+Number(jsumme2025));
   tabellenzeile.appendChild(w2022); 
   tabellenzeile.appendChild(w2023); 
   tabellenzeile.appendChild(w2024); 
+  tabellenzeile.appendChild(w2025); 
   tabellenzeile.appendChild(wAll); 
   tabellenzeile.appendChild(sumVonAnbeginn); 
   //tabellenzeile.appendChild(document.createTextNode("("+DieWerte[DieWerte.length-1].toString()+" -"+DieWerte[0].toString()+")"));

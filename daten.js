@@ -177,7 +177,22 @@ const messwerte_as_json_obj = [
   {  id: 'id-194', wert: 9239.3, zeitpunkt: '12.09.2024', Kommentar: 'Katerwochen' },
   {  id: 'id-195', wert: 9254.7, zeitpunkt: '20.09.2024', Kommentar: '' },
   {  id: 'id-196', wert: 9261.6, zeitpunkt: '23.09.2024', Kommentar: '' },
-  {  id: 'id-197', wert: 9267.9, zeitpunkt: '30.09.2024', Kommentar: '' },
+  {  id: 'id-198', wert: 9267.9, zeitpunkt: '30.09.2024', Kommentar: '' },
+  {  id: 'id-199', wert: 9296.8, zeitpunkt: '15.10.2024', Kommentar: '' },
+  {  id: 'id-200', wert: 9317.4, zeitpunkt: '25.10.2024', Kommentar: '' },
+  {  id: 'id-201', wert: 9319.55, zeitpunkt: '26.10.2024', Kommentar: '' },
+  {  id: 'id-202', wert: 9323.4, zeitpunkt: '28.10.2024', Kommentar: '' },
+  {  id: 'id-203', wert: 9370.7, zeitpunkt: '18.11.2024', Kommentar: '' },
+  {  id: 'id-204', wert: 9381.8, zeitpunkt: '25.11.2024', Kommentar: '' },
+  {  id: 'id-205', wert: 9389.2, zeitpunkt: '02.12.2024', Kommentar: '' },
+  {  id: 'id-206', wert: 9402.3, zeitpunkt: '07.12.2024', Kommentar: 'sturmfrei ENDE' },
+  {  id: 'id-207', wert: 9425.7, zeitpunkt: '16.12.2024', Kommentar: '' },
+  {  id: 'id-208', wert: 9441.0, zeitpunkt: '25.12.2024', Kommentar: 'Raclette' },
+  {  id: 'id-209', wert: 9456.9, zeitpunkt: '01.01.2025', Kommentar: '' },
+  {  id: 'id-210', wert: 9459.8, zeitpunkt: '06.01.2025', Kommentar: 'Wieder zurück' },
+  {  id: 'id-211', wert: 9464.5, zeitpunkt: '11.01.2025', Kommentar: '' },
+  {  id: 'id-212', wert: 9466.9, zeitpunkt: '12.01.2025', Kommentar: '' },
+  {  id: 'id-213', wert: 9478.4, zeitpunkt: '20.01.2025', Kommentar: 'Three at MIE starting...' },
 ];
 
 console.log('daten.js geladen');
